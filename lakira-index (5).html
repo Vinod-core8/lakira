@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAKIRA – Handwoven Sarees</title>
+<meta name="description" content="LAKIRA brings handwoven linen, silk, cotton, Jamdani and Banarasi sarees directly from artisans.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--warm:#fff6ec;--ink:#3a2418;--rust:#9a3b1e;--saffron:#e08a1e;--gold:#c9892b;--sand:#fbe6cc;--line:#f0dcc3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 Jost,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.logo{font-family:"Cormorant Garamond",serif}
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo{font-size:32px;font-weight:700;letter-spacing:.32em;color:var(--rust)}
+nav{display:flex;gap:26px;font-size:15px}
+nav a{padding:4px 0;border-bottom:1px solid transparent;transition:border-color .2s}
+nav a:hover{border-color:var(--saffron)}
+.menu{display:none;background:none;border:0;font-size:26px;color:var(--rust);cursor:pointer}
+/* hero with cursor reveal */
+.hero{--x:50%;--y:50%;position:relative;overflow:hidden;cursor:none;background:#3a2418}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle 280px at var(--x) var(--y),rgba(224,138,30,.22),transparent 70%);pointer-events:none}
+.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.hero-track{display:flex;height:100%;transition:transform .9s cubic-bezier(.65,0,.35,1)}
+.hero-slide{flex:0 0 100%;height:100%;background-size:cover;background-position:center 30%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(58,24,12,.88) 0%,rgba(90,34,14,.68) 42%,rgba(58,24,12,.25) 100%)}
+.hero::before{z-index:1}
+.hero-grid{z-index:2}
+.dots{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.dots button{width:34px;height:4px;border:0;background:rgba(255,255,255,.4);cursor:none;transition:background .3s,width .3s}
+.dots button.on{background:var(--saffron);width:52px}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;min-height:82vh;padding:40px 20px}
+.hero-copy{max-width:560px}
+.hero h1{font-size:76px;line-height:1;color:#fff;font-weight:700}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:#f3b04a}
+.hero p{margin:22px 0 30px;font-size:19px;color:#f5e3cc;max-width:480px}
+.cta{display:inline-block;background:var(--saffron);color:#2a1408;padding:13px 32px;margin:4px 8px 4px 0;transition:background .2s,transform .2s;cursor:none}
+.cta:hover{background:#f3b04a;transform:translateY(-2px)}
+.cta.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.8)}
+.cta.ghost:hover{background:#fff;color:var(--rust)}
+.weaves{margin-top:26px;font-size:15px;color:#f1dcc4;display:flex;gap:18px;flex-wrap:wrap}
+.weaves a{border-bottom:1px solid var(--gold)}
+.hero-art{position:relative;height:580px}
+.ring{position:absolute;right:6%;top:6%;width:380px;height:380px;border:2px solid rgba(201,137,43,.45);border-radius:50%}
+.arch{position:absolute;overflow:hidden;border-radius:999px 999px 14px 14px;box-shadow:0 24px 50px rgba(0,0,0,.4);transition:transform .25s ease-out;border:3px solid rgba(232,194,106,.85)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.a1{left:2%;top:50px;width:46%;height:440px}
+.a2{right:0;top:0;width:40%;height:330px}
+.a3{right:10%;bottom:10px;width:34%;height:230px}
+.tag{position:absolute;left:0;bottom:30px;background:rgba(58,36,24,.88);padding:12px 18px;border-left:4px solid var(--saffron);box-shadow:0 10px 24px rgba(0,0,0,.3);font:600 20px "Cormorant Garamond",serif;color:#fff;transition:transform .25s ease-out}
+.tag small{display:block;font:400 13px Jost,sans-serif;color:#e8cfae}
+
+.cursor{position:fixed;left:0;top:0;width:26px;height:26px;border:2px solid var(--saffron);border-radius:50%;pointer-events:none;z-index:60;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s,opacity .2s;opacity:0}
+.cursor.on{opacity:1}.cursor.big{width:54px;height:54px;background:rgba(224,138,30,.18)}
+.intro{text-align:center;max-width:720px;margin:0 auto;padding:72px 20px 24px}
+.intro h2{font-size:44px;line-height:1.1;color:var(--rust)}
+.intro p{margin-top:16px;font-size:18px;color:#6a4a3a}
+.sec{padding:56px 0}.sec.alt{background:var(--warm)}
+.sec h2{font-size:34px;color:var(--rust)}
+.head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;flex-wrap:wrap;gap:12px}
+.link{border-bottom:1px solid var(--saffron);padding-bottom:2px}
+.tabs{display:flex;gap:24px}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;font:500 17px Jost,sans-serif;padding:4px 0;cursor:pointer;color:#9a7a6a}
+.tabs button.on{color:var(--rust);border-color:var(--saffron)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 20px}
+.card .ph{position:relative;aspect-ratio:.64;overflow:hidden;background:var(--sand);border-radius:2px}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.card .alt{opacity:0}.card:hover .alt{opacity:1}
+.card h3{font-size:19px;line-height:1.25;margin-top:12px;font-weight:600}
+.price{color:var(--gold);font-weight:500;margin-top:4px}
+.hide{display:none}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.tile{position:relative;overflow:hidden;aspect-ratio:16/10;grid-column:span 2}
+.tile:nth-child(n+4){grid-column:span 3;aspect-ratio:16/8}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile:hover img{transform:scale(1.05)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(90,30,10,.7))}
+.tile span{position:absolute;left:18px;bottom:14px;z-index:2;color:#fff;font:600 26px "Cormorant Garamond",serif;letter-spacing:.04em}
+.band{background:linear-gradient(135deg,var(--rust),#c0622f);color:#fff;text-align:center;padding:64px 20px}
+.band h2{color:#fff;font-size:38px}
+.band p{max-width:640px;margin:14px auto 26px;font-size:18px;opacity:.95}
+.btn{display:inline-block;border:1px solid #fff;color:#fff;padding:11px 26px;margin:4px;transition:background .2s}
+.btn:hover{background:#fff;color:var(--rust)}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post img{aspect-ratio:1;width:100%;object-fit:cover}
+.post time{display:block;margin-top:12px;font-size:14px;color:#9a7a6a}
+.post h3{font-size:22px;line-height:1.2}
+/* FAQ */
+.faq{max-width:820px;margin:0 auto}
+.faq h2{text-align:center;margin-bottom:26px}
+details{background:#fff;border:1px solid var(--line);border-radius:6px;margin-bottom:12px}
+summary{cursor:pointer;list-style:none;padding:18px 54px 18px 20px;font:600 22px "Cormorant Garamond",serif;position:relative;color:var(--rust)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font:400 26px Jost,sans-serif;color:var(--saffron);transition:transform .2s}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 20px 20px;color:#5a3a2a}
+/* stores */
+.stores{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:stretch}
+.scard{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px}
+.scard h3{font-size:28px;color:var(--rust);margin-bottom:8px}
+.scard p{margin:8px 0;color:#5a3a2a}
+.scard .cta{margin:14px 8px 0 0;cursor:pointer;padding:10px 22px}
+.map{border:0;width:100%;min-height:340px;border-radius:6px;filter:sepia(.25)}
+footer{background:#3a2418;color:#f1dcc4;padding:56px 0 24px}
+.fcols{display:grid;grid-template-columns:1.2fr 1fr 1.4fr 1.2fr;gap:32px}
+footer h4{font:600 22px "Cormorant Garamond",serif;color:#fff;margin-bottom:12px}
+footer li{list-style:none;margin:6px 0;font-size:15px}
+footer a:hover{color:var(--saffron)}
+.sub{display:flex;margin-top:10px}
+.sub input{flex:1;padding:10px;border:1px solid #7a5a48;background:transparent;color:#fff;min-width:0}
+.sub button{padding:10px 16px;background:var(--saffron);border:0;font-weight:500;cursor:pointer}
+.copy{border-top:1px solid #5a3a2a;margin-top:36px;padding-top:18px;font-size:14px;text-align:center}
+/* sticky icons */
+.dock{position:fixed;right:16px;bottom:20px;z-index:50;display:flex;flex-direction:column;gap:10px}
+.dock a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--rust);box-shadow:0 6px 16px rgba(90,30,10,.28);transition:transform .2s,background .2s;position:relative}
+.dock a:hover{transform:scale(1.1)}
+.dock a.wa{background:#1fa855}.dock a.call{background:var(--saffron)}
+.dock a span{position:absolute;right:58px;background:#3a2418;color:#fff;font-size:13px;padding:4px 10px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.dock a:hover span{opacity:1}
+#top{opacity:0;pointer-events:none;transition:opacity .2s}#top.show{opacity:1;pointer-events:auto}
+@media(max-width:900px){
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}.menu{display:block}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .tiles{grid-template-columns:1fr 1fr}.tile,.tile:nth-child(n+4){grid-column:span 1;aspect-ratio:4/3}.tile:first-child{grid-column:span 2}
+ .posts{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}.stores{grid-template-columns:1fr}
+ .hero h1{font-size:46px}.hero-grid{grid-template-columns:1fr;min-height:0;padding:36px 20px 20px}.hero-art{height:400px}.ring{width:240px;height:240px}.a1{height:300px}.a2{height:230px}.a3{height:160px}.intro h2{font-size:34px}.logo{font-size:26px}
+ .hero,.cta{cursor:auto}.cursor{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.motif{display:none}}
+</style></head><body>
+<header><div class="wrap bar"><a class="logo" href="/">LAKIRA</a>
+<nav id="nav"><a href="/collections/sarees">Sarees</a><a href="/collections/new-arrivals">New Arrivals</a><a href="/collections/best-seller">Best Sellers</a><a href="/collections/blouses/BLOUSE">Blouses</a><a href="/collections/rare-art">Rare Art</a><a href="#faq">FAQ</a><a href="#stores">Stores</a></nav>
+<button class="menu" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button></div></header>
+
+<section class="hero"><div class="hero-bg"><div class="hero-track" id="ht"><div class="hero-slide" style="background-image:url(https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=1600&q=70)"></div><div class="hero-slide" style="background-image:url(https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=1600&q=70)"></div><div class="hero-slide" style="background-image:url(https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=1600&q=70)"></div><div class="hero-slide" style="background-image:url(https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=1600&q=70)"></div></div></div><div class="dots" id="hd"><button class="on" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button></div><div class="wrap hero-grid">
+<div class="hero-copy"><h1>Woven by hand.<em>Worn with heart.</em></h1><p>Handloom linen, silk, cotton, Jamdani and Banarasi sarees, straight from the artisans who weave them.</p>
+<a class="cta" href="/collections/sarees">Shop Sarees</a><a class="cta ghost" href="#stores">Find a Store</a>
+<div class="weaves"><a href="/collections/linen-sarees">Linen</a><a href="/collections/silk-sarees">Silk</a><a href="/collections/jamdani-yarns">Jamdani</a><a href="/collections/banarasi-tales">Banarasi</a><a href="/collections/cotton-sarees">Cotton</a></div></div>
+<div class="hero-art"><div class="ring" data-d="10"></div>
+<div class="arch a1" data-d="26"><img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=70" alt="Pink and orange saree"></div>
+<div class="arch a2" data-d="-18"><img src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=700&q=70" alt="Blue and yellow saree"></div>
+<div class="arch a3" data-d="34"><img src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt="Red and white saree"></div>
+<div class="tag" data-d="-30">Direct from artisans<small>Handwoven in India</small></div></div>
+</div></section>
+<div class="cursor" id="cur"></div>
+
+<section class="intro"><h2>The LAKIRA Sarees</h2><p>Exquisite, handmade, handwoven creations directly from the artisans. Our designs bring together ethnic elements, contemporary elegance and great quality.</p></section>
+
+<section class="sec"><div class="wrap">
+<div class="head"><div class="tabs"><button class="on" data-t="t1">Best Sellers</button><button data-t="t2">New Arrivals</button></div><a class="link" href="/collections/best-seller">View all</a></div>
+<div class="grid" id="t1"><a class="card" href="/products/maroon-gold-and-silver-thick-vertical-striped-linen-saree"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt="Maroon, Gold and Silver Thick Vertical Striped Linen Saree"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Maroon, Gold and Silver Thick Vertical Striped Linen Saree</h3><p class="price">Rs. 10,990.00</p></a>
+<a class="card" href="/products/pearl-white-chanderi-saree-with-a-striking-red-border"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt="Pearl White Chanderi Saree with a striking Red Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Pearl White Chanderi Saree with a striking Red Border</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/products/pearl-white-chanderi-saree-with-a-striking-yellow-boarder"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Pearl White Chanderi Saree with a striking Yellow Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Pearl White Chanderi Saree with a striking Yellow Border</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/products/navy-teal-textured-linen-saree-with-stripped-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt="Navy Teal Textured Linen Saree With Striped Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Navy Teal Textured Linen Saree With Striped Gold Zari Border & Pallu</h3><p class="price">Rs. 9,990.00</p></a>
+<a class="card" href="/products/greenish-grey-organic-textured-linen-saree-with-a-striking-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt="Sage Green Organic Textured Linen Saree With a striking Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Sage Green Organic Textured Linen Saree With a striking Gold Zari Border & Pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/products/burgundy-linen-saree-with-a-striking-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1646979200020-941e1deb2670?auto=format&fit=crop&w=600&q=70" alt="Burgundy Linen Saree with a Striking Zari Border & pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Burgundy Linen Saree with a Striking Zari Border & pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/products/white-linen-saree-with-a-striking-red-border"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="White Linen Saree with A Striking Red Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>White Linen Saree with A Striking Red Border</h3><p class="price">Rs. 10,990.00</p></a>
+<a class="card" href="/products/midnight-blue-cotton-saree-with-a-stunning-red-and-silver-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt="Midnight Blue Cotton Saree With a Stunning Red and Silver Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Midnight Blue Cotton Saree With a Stunning Red and Silver Pallu</h3><p class="price">Rs. 5,950.00</p></a>
+<a class="card" href="/products/red-cotton-saree-with-a-stunning-black-and-gold-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1646979200020-941e1deb2670?auto=format&fit=crop&w=600&q=70" alt="Red Cotton Saree With a Stunning Black and Gold Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Red Cotton Saree With a Stunning Black and Gold Pallu</h3><p class="price">Rs. 5,950.00</p></a>
+<a class="card" href="/products/evening-blue-rose"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=600&q=70" alt="Evening Blue Rose"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189025857-f42fe6e8dd91?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Evening Blue Rose</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/rose-garden-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Rose Garden"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Rose Garden</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/stunning-black-linen-saree-with-red-border-woven-in-sequence"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt="Stunning Black Linen Saree With Red Border & Woven In Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Stunning Black Linen Saree With Red Border & Woven In Sequence</h3><p class="price">Rs. 10,990.00</p></a></div><div class="grid hide" id="t2"><a class="card" href="/products/midnight-blue-resham-silk-saree-with-stunning-woven-in-sequence-along-the-border-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Amber Resham Silk Saree With Woven In sequence along the Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Amber Resham Silk Saree With Woven In sequence along the Border</h3><p class="price">Rs. 13,960.00</p></a>
+<a class="card" href="/products/stunning-fuchsia-silk-chanderi-saree-with-woven-buttas"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Stunning Fuchsia Silk Chanderi Saree With Woven Antique Buttas"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Stunning Fuchsia Silk Chanderi Saree With Woven Antique Buttas</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/stunning-black-linen-saree-with-grey-border-woven-in-sequence"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Stunning Black Linen Saree With Grey Border & Woven In Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Stunning Black Linen Saree With Grey Border & Woven In Sequence</h3><p class="price">Rs. 10,990.00</p></a>
+<a class="card" href="/products/golden-beige-matka-silk-saree-with-woven-in-shell-sequence-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt="A Vibrant Teal Matka Silk Saree With Woven In Shell Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>A Vibrant Teal Matka Silk Saree With Woven In Shell Sequence</h3><p class="price">Rs. 12,970.00</p></a>
+<a class="card" href="/products/golden-beige-matka-silk-saree-with-woven-in-shell-sequence"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Golden Beige Matka Silk Saree With Woven In Shell Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Golden Beige Matka Silk Saree With Woven In Shell Sequence</h3><p class="price">Rs. 12,970.00</p></a>
+<a class="card" href="/products/volt-green-silk-chanderi-saree-with-silver-fish-buttas-along-the-length-of-the-saree"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt="Volt Green Silk Chanderi Saree With Silver Fish Buttas Along The Length of the Saree"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Volt Green Silk Chanderi Saree With Silver Fish Buttas Along The Length of the Saree</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/coral-blossom-textured-linen-saree-with-a-striking-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Coral Blossom Textured Linen Saree With A Striking Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Coral Blossom Textured Linen Saree With A Striking Gold Zari Border & Pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/products/ocean-blue-cotton-chanderi-saree-with-gold-zari-design"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt="Ocean Blue Silk Cotton Chanderi Saree With Gold Zari Design"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Ocean Blue Silk Cotton Chanderi Saree With Gold Zari Design</h3><p class="price">Rs. 7,930.00</p></a></div></div></section>
+
+<section class="sec alt"><div class="wrap"><div class="tiles"><a class="tile wide" href="/collections/linen-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=900&q=70" alt="Linen Story"><span>Linen Story</span></a>
+<a class="tile wide" href="/collections/silk-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=900&q=70" alt="The Silk Saga"><span>The Silk Saga</span></a>
+<a class="tile wide" href="/collections/banarasi-tales"><img loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=900&q=70" alt="Banarasi Tales"><span>Banarasi Tales</span></a>
+<a class="tile " href="/collections/cotton-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=900&q=70" alt="Cotton Chronicles"><span>Cotton Chronicles</span></a>
+<a class="tile " href="/collections/jamdani-yarns"><img loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=900&q=70" alt="Jamdani Yarns"><span>Jamdani Yarns</span></a></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="head"><h2>Exquisite Linen Collection</h2><a class="link" href="/collections/linen-sarees">View all</a></div>
+<div class="grid"><a class="card" href="/collections/linen-sarees/products/test-2"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="White Linen Saree with Zari Stripes and a Subtle Gold Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>White Linen Saree with Zari Stripes and a Subtle Gold Border</h3><p class="price">Rs. 11,980.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/red-linen-saree-with-silver-zari-horizontal-strips"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt="Red Linen Saree With Silver Zari Horizontal Stripes"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Red Linen Saree With Silver Zari Horizontal Stripes</h3><p class="price">Rs. 9,910.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/absolutely-stunning-caramel-textured-linen-saree-with-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Absolutely Stunning Caramel Textured Linen Saree With Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Absolutely Stunning Caramel Textured Linen Saree With Gold Zari Border & Pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/white-linen-saree-with-geometric-jamdani-work-along-the-border-and-on-the-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt="White Linen Saree With Geometric Jamdani Work along the border and on the Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>White Linen Saree With Geometric Jamdani Work along the border and on the Pallu</h3><p class="price">Rs. 9,730.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/black-linen-saree-with-geometric-jamdani-work-along-the-border-and-on-the-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Black Linen Saree With Geometric Jamdani Work along the border and on the Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Black Linen Saree With Geometric Jamdani Work along the border and on the Pallu</h3><p class="price">Rs. 9,730.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/bronze-linen-saree-with-zari-stripes"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Bronze Tissue Linen Saree With Thin Zari Stripes"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Bronze Tissue Linen Saree With Thin Zari Stripes</h3><p class="price">Rs. 10,990.00</p></a></div></div></section>
+
+<section class="band"><h2>The Saree Kaleidoscope</h2><p>The finest textiles from the land of India have been woven for centuries into the six-yard drape, the incomparable saree.</p>
+<a class="btn" href="/collections/linen-sarees">Linen Story</a><a class="btn" href="/collections/silk-sarees">The Silk Saga</a></section>
+
+<section class="sec"><div class="wrap"><div class="head"><h2>Stunning Silk Sarees</h2><a class="link" href="/collections/silk-sarees">View all</a></div>
+<div class="grid"><a class="card" href="/collections/silk-sarees/products/midnight-blue-maslin-silk-saree-with-zari-buttas-and-jamdani-design-in-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189025857-f42fe6e8dd91?auto=format&fit=crop&w=600&q=70" alt="Midnight Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Midnight Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/fuchsia-pink-muslin-silk-saree-with-zari-jamdani-design"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design</h3><p class="price">Rs. 14,950.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/cobalt-blue-muslin-silk-saree-with-zari-buttas-and-jamdani-design-in-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt="Cobalt Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Cobalt Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu</h3><p class="price">Rs. 16,930.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/fuchsia-pink-muslin-silk-saree-with-zari-jamdani-design-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design</h3><p class="price">Rs. 13,960.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/forest-green-muslin-silk-saree-with-woven-in-sequence-along-the-border"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt="Forest Green Muslin Silk Saree With Woven In Sequence along the Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Forest Green Muslin Silk Saree With Woven In Sequence along the Border</h3><p class="price">Rs. 13,960.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/pecan-brown-silver-grey-silk-chanderi-saree-with-a-stunning-mustard-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt="Pecan Brown & Silver Grey Silk Chanderi Saree with a Stunning Mustard Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Pecan Brown & Silver Grey Silk Chanderi Saree with a Stunning Mustard Pallu</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/walnut-brown-red-silk-chanderi-saree-with-a-stunning-sunset-gold-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Walnut Brown & Red Silk Chanderi Saree with a Stunning Sunset Gold Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Walnut Brown & Red Silk Chanderi Saree with a Stunning Sunset Gold Pallu</h3><p class="price">Rs. 15,940.00</p></a></div></div></section>
+
+<section class="sec alt" id="faq"><div class="wrap faq"><h2>Frequently Asked Questions</h2><details><summary>How do I know the sarees are handwoven?</summary><p>Every LAKIRA saree is sourced directly from weaving artisans. Each product page lists the fabric (linen, silk, cotton, Jamdani, Banarasi and more) and weave details so you know exactly what you are buying.</p></details>
+<details><summary>Do slight colour differences occur?</summary><p>Handwoven fabric can vary slightly in shade and texture from batch to batch, and screens display colour differently. These small variations are part of the handloom character.</p></details>
+<details><summary>How long does delivery take?</summary><p>Delivery times depend on your location and the product. Please see our Shipping & Delivery page for current timelines and charges.</p></details>
+<details><summary>Can I return or exchange a saree?</summary><p>Our Refund & Exchange policy explains eligibility and the steps to request a return or exchange. You can read it on the Refund & Exchange page or contact us for help.</p></details>
+<details><summary>Is Cash on Delivery available?</summary><p>Cash on Delivery may be offered on eligible orders and can require mobile number verification by OTP at checkout.</p></details>
+<details><summary>How should I care for linen and silk sarees?</summary><p>Dry-clean silk sarees and store them folded in a muslin cloth. Linen can be gently hand-washed in cold water or dry-cleaned, and softens beautifully with every wear. Avoid direct sunlight when drying.</p></details>
+<details><summary>Can I visit a store or get styling help?</summary><p>Yes. Visit us in Pune or call/WhatsApp us and our team will help you choose a saree, blouse or dupatta.</p></details></div></section>
+
+<section class="sec" id="stores"><div class="wrap"><div class="head"><h2>Store Locations</h2></div>
+<div class="stores"><div class="scard"><h3>Pune Store</h3><p>WOVEN TREASURES<br>Villa 6, Uday Bang Farm House, B.T. Kawade Road, Pune - 411013, Maharashtra</p><p>+91 9637845544<br>+91 9359217323<br>info@thearyavart.com</p>
+<a class="cta" href="https://www.google.com/maps/search/?api=1&query=Uday+Bang+Farm+House+B.T.+Kawade+Road+Pune+411013" target="_blank" rel="noopener">Get Directions</a><a class="cta ghost" href="tel:+919637845544">Call Store</a></div>
+<iframe class="map" title="LAKIRA Pune store map" loading="lazy" src="https://maps.google.com/maps?q=B.T.+Kawade+Road,+Pune+411013&output=embed"></iframe></div></div></section>
+
+<section class="sec alt"><div class="wrap"><div class="head"><h2>From the Journal</h2><a class="link" href="/blogs/aryavart">View all</a></div><div class="posts"><a class="post" href="/blogs/aryavart/organza-hand-painted-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Organza hand painted sarees"><time>Apr 08, 2021</time><h3>Organza hand painted sarees</h3></a>
+<a class="post" href="/blogs/aryavart/explore-wide-range-of-silk-sarees-for-wedding"><img loading="lazy" src="https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=600&q=70" alt="Explore wide range of Silk Sarees For Wedding"><time>Mar 20, 2021</time><h3>Explore wide range of Silk Sarees For Wedding</h3></a>
+<a class="post" href="/blogs/aryavart/enhance-your-beauty-with-elegant-chiffon-saree"><img loading="lazy" src="https://images.unsplash.com/photo-1646979200020-941e1deb2670?auto=format&fit=crop&w=600&q=70" alt="Enhance Your Beauty with Elegant Chiffon Saree"><time>Mar 20, 2021</time><h3>Enhance Your Beauty with Elegant Chiffon Saree</h3></a></div></div></section>
+
+<footer><div class="wrap"><div class="fcols">
+<div><h4>Information</h4><ul><li><a href="/pages/privacy-policy">Privacy Policy</a></li><li><a href="/pages/shipping-policy">Shipping &amp; Delivery</a></li><li><a href="/pages/terms-and-conditions">Terms &amp; Conditions</a></li><li><a href="/policies/refund-policy">Refund &amp; Exchange</a></li><li><a href="/pages/contact-us">Contact Us</a></li><li><a href="/pages/about-us">About Us</a></li></ul></div>
+<div><h4>Shop</h4><ul><li><a href="/collections/sarees">Sarees</a></li><li><a href="/collections/new-arrivals">New Arrivals</a></li><li><a href="/collections/best-seller">Best Sellers</a></li><li><a href="/collections/blouses/BLOUSE">Blouses</a></li><li><a href="#faq">FAQ</a></li><li><a href="#stores">Store Locations</a></li></ul></div>
+<div><h4>Sign up and save</h4><p style="font-size:15px">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p><form class="sub" onsubmit="return false"><input type="email" placeholder="Enter your email" aria-label="Email"><button>Subscribe</button></form></div>
+<div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/thearyavart">Instagram</a></li><li><a href="https://www.facebook.com/pg/aryavart2018/posts/">Facebook</a></li><li><a href="https://www.youtube.com/watch?v=cSSq0lWAxBs">YouTube</a></li></ul></div>
+</div><div class="copy">&copy; 2026 LAKIRA</div></div></footer>
+
+<div class="dock">
+<a id="top" href="#" aria-label="Back to top"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg><span>Top</span></a>
+<a href="#stores" aria-label="Stores"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Stores</span></a>
+<a href="mailto:info@thearyavart.com" aria-label="Email"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Email us</span></a>
+<a class="call" href="tel:+919637845544" aria-label="Call"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Call us</span></a>
+<a class="wa" href="https://wa.me/919637845544" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.5z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-.9.7c-.8-.4-1.6-1.2-2-2l.7-.9-1-2z"/></svg><span>WhatsApp</span></a>
+</div>
+<script>
+var hero=document.querySelector('.hero'),cur=document.getElementById('cur'),ms=document.querySelectorAll('.hero [data-d]');
+var fine=matchMedia('(pointer:fine)').matches;
+if(fine){
+ hero.addEventListener('mousemove',function(e){
+  var r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+  hero.style.setProperty('--x',x+'px');hero.style.setProperty('--y',y+'px');
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';cur.classList.add('on');
+  var dx=(x/r.width-.5),dy=(y/r.height-.5);
+  ms.forEach(function(m,i){var k=parseFloat(m.dataset.d);m.style.transform='translate('+(dx*k)+'px,'+(dy*k)+'px)'});
+ });
+ hero.addEventListener('mouseleave',function(){cur.classList.remove('on')});
+ hero.querySelectorAll('a').forEach(function(a){a.addEventListener('mouseenter',function(){cur.classList.add('big')});a.addEventListener('mouseleave',function(){cur.classList.remove('big')})});
+}
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+ ['t1','t2'].forEach(function(id){document.getElementById(id).classList.toggle('hide',id!==b.dataset.t)});
+})});
+
+var ht=document.getElementById('ht'),hd=document.querySelectorAll('#hd button'),hi=0,htm;
+function goH(n){hi=(n+hd.length)%hd.length;ht.style.transform='translateX('+(-hi*100)+'%)';hd.forEach(function(b,k){b.classList.toggle('on',k===hi)})}
+function runH(){clearInterval(htm);if(!matchMedia('(prefers-reduced-motion:reduce)').matches)htm=setInterval(function(){goH(hi+1)},5000)}
+hd.forEach(function(b,k){b.addEventListener('click',function(){goH(k);runH()})});runH();
+var top_=document.getElementById('top');
+addEventListener('scroll',function(){top_.classList.toggle('show',scrollY>500)});
+top_.addEventListener('click',function(e){e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+</script></body></html>
