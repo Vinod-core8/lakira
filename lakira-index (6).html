@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAKIRA – Handwoven Sarees</title>
+<meta name="theme-color" content="#3a130f"><meta name="description" content="LAKIRA brings handwoven linen, silk, cotton, Jamdani and Banarasi sarees directly from artisans.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#fbf7f1;--cream:#f4ece0;--ink:#1d1311;--oxblood:#3a130f;--wine:#6b2118;--gold:#b98b3e;--gold-l:#dcb872;--muted:#7d6d63;--line:#e8ddcd;--serif:"Cormorant Garamond",Georgia,serif;--sans:Jost,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font:300 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold-l);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.logo{font-family:var(--serif)}
+
+/* announcement + header */
+.top{background:var(--ink);color:#d8c7ae;text-align:center;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;padding:9px 14px}
+.top b{color:var(--gold-l);font-weight:400;margin:0 10px}
+header{position:sticky;top:0;z-index:30;background:rgba(251,247,241,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.logo{font-size:30px;font-weight:600;letter-spacing:.38em;color:var(--oxblood)}
+nav{display:flex;gap:28px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
+nav a{position:relative;padding:6px 0}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+nav a:hover::after{transform:scaleX(1)}
+.hbtn{border:1px solid var(--oxblood);padding:11px 24px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;transition:background .25s,color .25s}
+.hbtn:hover{background:var(--oxblood);color:var(--ivory)}
+.menu{display:none;background:none;border:0;font-size:26px;color:var(--oxblood);cursor:pointer}
+
+/* ===== HERO ===== */
+.hero{position:relative;display:flex;flex-direction:column;background:var(--oxblood);color:#f6ede0;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+ radial-gradient(55% 75% at 82% 38%,rgba(185,139,62,.26),transparent 62%),
+ radial-gradient(45% 60% at 0% 100%,rgba(160,48,34,.38),transparent 62%),
+ linear-gradient(160deg,#4a1a14 0%,#2a0e0b 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.09;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.hero-word{position:absolute;left:50%;bottom:-.14em;transform:translateX(-50%);z-index:-1;font:600 clamp(120px,24vw,360px)/1 var(--serif);letter-spacing:.12em;color:transparent;-webkit-text-stroke:1px rgba(220,184,114,.13);white-space:nowrap;pointer-events:none;user-select:none}
+.hero-grid{flex:1;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;min-height:min(820px,calc(100vh - 110px));padding-top:48px;padding-bottom:56px}
+.eyebrow{display:flex;align-items:center;gap:16px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);font-weight:400}
+.eyebrow::before{content:"";width:44px;height:1px;background:var(--gold-l)}
+.hero h1{margin:24px 0 0;font-size:clamp(48px,5.9vw,88px);line-height:.98;font-weight:500;letter-spacing:-.012em;color:#fff}
+.hero h1 em{display:block;font-style:italic;font-weight:400;background:linear-gradient(95deg,#f1d9a2 0%,#c99a4b 60%,#e6c685 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.hero-lead{margin:26px 0 34px;max-width:470px;font-size:18px;line-height:1.7;color:rgba(246,237,224,.74)}
+.hero-cta{display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.h-btn{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#e2c079,#b98b3e);color:#1d1311;padding:17px 34px;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;transition:transform .3s,box-shadow .3s;box-shadow:0 14px 34px -12px rgba(185,139,62,.7)}
+.h-btn svg{transition:transform .3s}
+.h-btn:hover{transform:translateY(-3px);box-shadow:0 20px 40px -12px rgba(185,139,62,.85)}
+.h-btn:hover svg{transform:translateX(5px)}
+.h-link{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;color:#fff;padding:6px 0;border-bottom:1px solid rgba(220,184,114,.6);transition:color .25s,border-color .25s}
+.h-link:hover{color:var(--gold-l);border-color:var(--gold-l)}
+.weaves{margin-top:40px;padding-top:26px;border-top:1px solid rgba(220,184,114,.22);display:flex;gap:10px 28px;flex-wrap:wrap;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,237,224,.62)}
+.weaves span{color:var(--gold-l);letter-spacing:.2em}
+.weaves a{transition:color .25s}.weaves a:hover{color:var(--gold-l)}
+
+.hero-copy>*{animation:up 1s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>:nth-child(2){animation-delay:.1s}.hero-copy>:nth-child(3){animation-delay:.22s}.hero-copy>:nth-child(4){animation-delay:.34s}.hero-copy>:nth-child(5){animation-delay:.46s}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+.visual{display:flex;flex-direction:column;gap:22px;animation:up 1.1s .2s cubic-bezier(.2,.7,.2,1) both}
+.stage{position:relative;height:clamp(460px,64vh,640px)}
+.stage [data-d]{transition:translate .6s cubic-bezier(.2,.7,.2,1)}
+.outline{position:absolute;right:2%;top:-18px;width:min(72%,400px);height:100%;border:1px solid rgba(220,184,114,.55);border-radius:999px 999px 0 0}
+.arch{position:absolute;right:7%;top:0;width:min(72%,400px);height:100%;border-radius:999px 999px 0 0;overflow:hidden;box-shadow:0 40px 80px -20px rgba(0,0,0,.6);background:#2a0e0b}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(26,8,6,.55));pointer-events:none}
+.s{position:absolute;inset:0;opacity:0;background:linear-gradient(160deg,#6b2118,#2a0e0b);font-size:0;transition:opacity 1.3s ease}
+.s.on{opacity:1}
+.s img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);transition:transform 7.5s ease-out}
+.s.on img{transform:scale(1)}
+.mini{position:absolute;left:0;bottom:34px;width:31%;aspect-ratio:3/4;border-radius:999px 999px 0 0;overflow:hidden;border:6px solid #3a130f;box-shadow:0 24px 50px -12px rgba(0,0,0,.6)}
+.mini img{width:100%;height:100%;object-fit:cover}
+.seal{position:absolute;left:5%;top:7%;width:118px;height:118px;color:var(--gold-l)}
+.seal svg{width:100%;height:100%;animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cap{position:absolute;right:0;bottom:30px;min-width:218px;padding:16px 20px 16px 22px;background:rgba(255,255,255,.09);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);display:block;transition:background .3s}
+.cap:hover{background:rgba(255,255,255,.16)}
+.cap small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);font-weight:400}
+.cap strong{display:block;font:500 26px/1.15 var(--serif);color:#fff;margin:4px 0 2px}
+.cap span{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.ctrl{display:flex;align-items:center;gap:18px;justify-content:flex-end;padding-right:7%}
+.ctrl .n{font:500 15px var(--serif);letter-spacing:.14em;color:rgba(255,255,255,.7)}
+.ctrl .n b{color:#fff;font-weight:600;font-size:20px}
+.ctrl .bars{display:flex;gap:8px}
+.ctrl button{position:relative;width:44px;height:14px;background:none;border:0;cursor:pointer}
+.ctrl button::before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:rgba(255,255,255,.25)}
+.ctrl button i{position:absolute;left:0;top:6px;height:2px;width:0;background:var(--gold-l)}
+.ctrl button.on i{animation:fill 6.5s linear forwards}
+@keyframes fill{to{width:100%}}
+
+.strip{border-top:1px solid rgba(220,184,114,.22);background:rgba(18,6,5,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip p{display:flex;align-items:center;gap:12px;padding:20px 18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,237,224,.78);font-weight:400}
+.strip p+p{border-left:1px solid rgba(220,184,114,.16)}
+.strip p::before{content:"";flex:none;width:7px;height:7px;background:var(--gold-l);transform:rotate(45deg)}
+
+/* ===== sections ===== */
+.eyebrow.dark{justify-content:center;color:var(--gold)}
+.eyebrow.dark::before{background:var(--gold)}
+.eyebrow.dark::after{content:"";width:44px;height:1px;background:var(--gold)}
+.intro{text-align:center;max-width:780px;margin:0 auto;padding:110px 24px 40px}
+.intro h2{margin-top:20px;font-size:clamp(40px,5vw,62px);line-height:1.04;font-weight:500;color:var(--oxblood);letter-spacing:-.01em}
+.intro p{margin-top:22px;font-size:18px;color:var(--muted);line-height:1.75}
+.sec{padding:72px 0}.sec.alt{background:var(--cream)}
+.sec h2{font-size:clamp(32px,3.6vw,46px);font-weight:500;color:var(--oxblood);letter-spacing:-.005em;line-height:1.1}
+.head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:38px;padding-bottom:20px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:12px}
+.link{position:relative;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;padding-bottom:4px;border-bottom:1px solid var(--gold);transition:color .25s}
+.link::after{content:" \2192";transition:margin .25s}
+.link:hover{color:var(--gold)}.link:hover::after{margin-left:6px}
+.tabs{display:flex;gap:34px}
+.tabs button{background:none;border:0;border-bottom:1px solid transparent;font:400 12.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 0;cursor:pointer;color:var(--muted);transition:color .25s}
+.tabs button:hover{color:var(--ink)}
+.tabs button.on{color:var(--oxblood);border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px 26px}
+.card{display:block}
+.card .ph{position:relative;aspect-ratio:.68;overflow:hidden;background:var(--cream)}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.card .alt{opacity:0}.card:hover .alt{opacity:1}
+.card:hover .ph img{transform:scale(1.05)}
+.card .ph::after{content:"View piece";position:absolute;left:12px;right:12px;bottom:12px;padding:11px;text-align:center;background:rgba(251,247,241,.94);color:var(--oxblood);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transform:translateY(14px);opacity:0;transition:transform .4s,opacity .4s}
+.card:hover .ph::after{transform:none;opacity:1}
+.card h3{font-size:20px;line-height:1.25;margin-top:16px;font-weight:500;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.price{color:var(--wine);font-weight:400;font-size:14px;letter-spacing:.08em;margin-top:6px}
+.hide{display:none}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.tile{position:relative;overflow:hidden;aspect-ratio:4/5;grid-column:span 2}
+.tile:nth-child(n+4){grid-column:span 3;aspect-ratio:16/10}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.tile:hover img{transform:scale(1.07)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(26,8,6,.78))}
+.tile::before{content:"";position:absolute;inset:14px;border:1px solid rgba(220,184,114,.0);z-index:2;transition:border-color .5s;pointer-events:none}
+.tile:hover::before{border-color:rgba(220,184,114,.7)}
+.tile span{position:absolute;left:28px;bottom:26px;z-index:3;color:#fff;font:500 32px/1.1 var(--serif);letter-spacing:.01em}
+.tile span::after{content:"Explore \2192";display:block;margin-top:8px;font:400 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.tile:hover span::after{opacity:1;transform:none}
+.band{position:relative;background:radial-gradient(60% 120% at 50% 0%,#5c2018,#2a0e0b);color:#f6ede0;text-align:center;padding:120px 24px}
+.band::before{content:"";position:absolute;inset:22px;border:1px solid rgba(220,184,114,.3);pointer-events:none}
+.band h2{color:#fff;font-size:clamp(38px,5vw,64px);font-weight:500}
+.band p{max-width:620px;margin:20px auto 38px;font-size:18px;color:rgba(246,237,224,.74);line-height:1.75}
+.btn{display:inline-block;border:1px solid var(--gold-l);color:var(--gold-l);padding:15px 32px;margin:6px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:background .3s,color .3s}
+.btn:hover{background:var(--gold-l);color:var(--ink)}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.post .im{display:block}
+.post{display:block}
+.post img{aspect-ratio:4/5;width:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.post{overflow:hidden}
+.post:hover img{transform:scale(1.04)}
+.post time{display:block;margin-top:18px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.post h3{font-size:26px;line-height:1.2;font-weight:500;margin-top:6px;color:var(--oxblood)}
+/* FAQ */
+.faq{max-width:840px;margin:0 auto}
+.faq h2{text-align:center;margin-bottom:40px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:24px 56px 24px 0;font:500 24px/1.25 var(--serif);position:relative;color:var(--oxblood);transition:color .25s}
+summary:hover{color:var(--gold)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font:300 30px var(--sans);color:var(--gold)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 56px 26px 0;color:var(--muted);font-size:16.5px;line-height:1.8}
+/* stores */
+.stores{display:grid;grid-template-columns:1fr 1.25fr;gap:0;align-items:stretch;border:1px solid var(--line)}
+.scard{background:var(--oxblood);color:#eadcc6;padding:48px 44px}
+.scard h3{font-size:36px;font-weight:500;color:#fff;margin-bottom:12px}
+.scard p{margin:12px 0;color:rgba(246,237,224,.78);font-size:15.5px}
+.scard .cta{margin:22px 12px 0 0}
+.cta{display:inline-block;background:linear-gradient(135deg,#e2c079,#b98b3e);color:var(--ink);padding:14px 28px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:transform .25s}
+.cta:hover{transform:translateY(-2px)}
+.cta.ghost{background:transparent;color:#fff;border:1px solid rgba(220,184,114,.6)}
+.cta.ghost:hover{background:var(--gold-l);color:var(--ink)}
+.map{border:0;width:100%;min-height:380px;height:100%;filter:grayscale(.45) sepia(.2) contrast(1.02)}
+footer{background:#140a08;color:#cdbca4;padding:84px 0 28px}
+.fcols{display:grid;grid-template-columns:1.1fr 1fr 1.5fr 1fr;gap:44px}
+footer h4{font:400 12px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);margin-bottom:20px}
+footer li{list-style:none;margin:10px 0;font-size:15px}
+footer a{transition:color .25s}footer a:hover{color:var(--gold-l)}
+footer p{color:#a8977f}
+.sub{display:flex;margin-top:16px;border-bottom:1px solid rgba(220,184,114,.45)}
+.sub input{flex:1;padding:12px 0;border:0;background:transparent;color:#fff;min-width:0;font:300 15px var(--sans);outline:none}
+.sub input::placeholder{color:#8a7a68}
+.sub button{padding:12px 0 12px 16px;background:none;border:0;color:var(--gold-l);font:400 11.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+.copy{border-top:1px solid rgba(220,184,114,.16);margin-top:60px;padding-top:24px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-align:center;color:#8a7a68}
+/* dock */
+.dock{position:fixed;right:18px;bottom:22px;z-index:50;display:flex;flex-direction:column;gap:10px}
+.dock a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--gold-l);background:rgba(29,19,17,.92);border:1px solid rgba(220,184,114,.4);backdrop-filter:blur(8px);box-shadow:0 10px 24px -8px rgba(0,0,0,.45);transition:transform .25s,background .25s;position:relative}
+.dock a:hover{transform:translateY(-3px)}
+.dock a.wa{background:#1fa855;border-color:#1fa855;color:#fff}.dock a.call{background:linear-gradient(135deg,#e2c079,#b98b3e);border-color:transparent;color:var(--ink)}
+.dock a span{position:absolute;right:58px;background:var(--ink);color:#fff;font-size:12px;letter-spacing:.08em;padding:5px 12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.dock a:hover span{opacity:1}
+#top{opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}#top.show{opacity:1;pointer-events:auto}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1180px){.hbtn{display:none}}
+@media(max-width:1040px){
+ nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--ivory);flex-direction:column;gap:6px;padding:18px 24px 24px;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}.menu{display:block}
+}
+@media(max-width:900px){
+ .grid{grid-template-columns:repeat(2,1fr);gap:36px 16px}
+ .tiles{grid-template-columns:1fr 1fr;gap:12px}.tile,.tile:nth-child(n+4){grid-column:span 1;aspect-ratio:4/5}.tile:first-child{grid-column:span 2;aspect-ratio:16/10}
+ .tile span{left:18px;bottom:16px;font-size:24px}
+ .posts{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}.stores{grid-template-columns:1fr}.scard{padding:36px 28px}
+ .hero-grid{grid-template-columns:1fr;gap:40px;min-height:0;padding-top:40px;padding-bottom:40px}
+ .hero-lead{font-size:16.5px}
+ .stage{height:460px}.ctrl{justify-content:center;padding-right:0}
+ .seal{width:92px;height:92px}.cap{min-width:190px}.cap strong{font-size:22px}
+ .strip .wrap{grid-template-columns:1fr 1fr}.strip p{padding:16px 12px;font-size:10.5px;letter-spacing:.12em}.strip p:nth-child(3){border-left:0}.strip p:nth-child(n+3){border-top:1px solid rgba(220,184,114,.16)}
+ .logo{font-size:24px}.intro{padding-top:80px}.sec{padding:56px 0}.band{padding:90px 24px}
+ .top{font-size:10px;letter-spacing:.14em}
+}
+@media(max-width:520px){.hero-cta{gap:22px}.top b,.top .t2{display:none}.eyebrow{font-size:10.5px;letter-spacing:.2em;gap:10px}.eyebrow::before{width:26px}.weaves{gap:8px 18px;font-size:12px}}
+
+/* ===== v2: full-bleed slideshow hero + scroll-aware nav ===== */
+header{margin-bottom:-76px;background:transparent;border-bottom:1px solid transparent;backdrop-filter:none;-webkit-backdrop-filter:none;transition:transform .5s cubic-bezier(.2,.7,.2,1),background .4s,box-shadow .4s,border-color .4s}
+.bar{transition:height .4s cubic-bezier(.2,.7,.2,1)}
+.logo,nav a,.menu{color:#fff;transition:color .3s}
+.logo{transition:color .3s,font-size .4s}
+.hbtn{border-color:rgba(255,255,255,.7);color:#fff}
+.hbtn:hover{background:#fff;color:var(--oxblood)}
+header.scrolled{background:rgba(251,247,241,.92);backdrop-filter:saturate(1.4) blur(16px);-webkit-backdrop-filter:saturate(1.4) blur(16px);border-color:var(--line);box-shadow:0 14px 34px -22px rgba(29,19,17,.45)}
+header.scrolled .bar{height:62px}
+header.scrolled .logo{color:var(--oxblood);font-size:26px}
+header.scrolled nav a,header.scrolled .menu{color:var(--ink)}
+header.scrolled .hbtn{border-color:var(--oxblood);color:var(--oxblood)}
+header.scrolled .hbtn:hover{background:var(--oxblood);color:var(--ivory)}
+header.hide{transform:translateY(-110%)}
+.hprog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-l));transform:scaleX(0);transform-origin:left;opacity:0;transition:opacity .3s}
+header.scrolled .hprog{opacity:1}
+
+.hero{min-height:calc(100vh - 36px)}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:#2a0e0b;overflow:hidden}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+ linear-gradient(180deg,rgba(20,8,6,.6) 0%,rgba(20,8,6,0) 28%),
+ linear-gradient(95deg,rgba(26,8,6,.88) 0%,rgba(40,14,10,.62) 45%,rgba(26,8,6,.18) 100%),
+ linear-gradient(0deg,rgba(20,8,6,.7) 0%,rgba(20,8,6,0) 35%)}
+.hero-bg .s{position:absolute;inset:0;margin:0}
+.hero-bg .s img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-grid{width:100%;grid-template-columns:1fr;min-height:0;flex:1;align-items:center;padding-top:150px;padding-bottom:110px}
+.hero h1{font-size:clamp(52px,7vw,108px)}
+.hero-copy{max-width:760px}
+.hero-ctrl{position:absolute;left:0;right:0;bottom:92px}
+.hero-ctrl .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hero-ctrl .now{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.hero-ctrl .now a{display:inline-block;margin-left:12px;color:#fff;font:500 22px var(--serif);letter-spacing:.02em;text-transform:none;border-bottom:1px solid var(--gold-l)}
+.hero-ctrl .ctrl{padding-right:0}
+.hero-ctrl{z-index:2}
+@media(max-width:900px){
+ header{margin-bottom:-76px}
+ .hero{min-height:auto}
+ .hero-grid{padding-top:130px;padding-bottom:230px}
+ .hero-ctrl{bottom:150px}
+ .hero-ctrl .wrap{justify-content:flex-start}
+ .hero-bg::after{background:linear-gradient(180deg,rgba(20,8,6,.6) 0%,rgba(20,8,6,.35) 40%,rgba(20,8,6,.8) 100%)}
+ nav a{color:var(--ink)}
+ header.scrolled .bar{height:62px}
+}
+@media(max-width:1040px){nav a{color:var(--ink)}}
+
+/* ===== v3: scroll effects after hero ===== */
+.hero{padding-bottom:44px}
+.hero-bg{inset:-26% 0 0 0;will-change:transform}
+.hero-copy,.hero-ctrl{will-change:transform,opacity}
+.curtain{position:relative;z-index:2;background:var(--ivory);margin-top:-44px;border-radius:44px 44px 0 0;box-shadow:0 -34px 70px -34px rgba(0,0,0,.55)}
+.curtain .intro{padding-top:96px}
+/* word-by-word headline reveal */
+.w{display:inline-block;opacity:0;transform:translateY(.55em);filter:blur(8px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s;transition-delay:calc(var(--i)*70ms)}
+.in .w{opacity:1;transform:none;filter:none}
+/* heading underline draw */
+.head{position:relative}
+.head::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--gold);transition:width 1.4s cubic-bezier(.2,.7,.2,1) .2s}
+.head.in::after{width:140px}
+/* richer item reveal */
+.card.rv{transform:translateY(46px) scale(.965)}
+.card.rv.in{transform:none}
+.rvt img{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s cubic-bezier(.65,0,.2,1) var(--d,0ms),transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.rvt.in img{clip-path:inset(0 0 0 0)}
+.post.rvt img{clip-path:inset(0 0 100% 0)}
+.post.rvt.in img{clip-path:inset(0)}
+.tile.rvt::after,.tile.rvt span{opacity:0;transition:opacity .9s ease calc(var(--d,0ms) + .7s)}
+.tile.rvt.in::after,.tile.rvt.in span{opacity:1}
+/* parallax tiles */
+.tile img{position:absolute;left:0;top:-10%;width:100%;height:120%;will-change:translate}
+/* band rings parallax */
+.band::after{content:"";position:absolute;left:50%;top:50%;width:560px;height:560px;border:1px solid rgba(220,184,114,.16);border-radius:50%;translate:-50% calc(-50% + var(--par,0)*1px);pointer-events:none;box-shadow:0 0 0 90px rgba(220,184,114,.025),0 0 0 180px rgba(220,184,114,.02)}
+.band{overflow:hidden}
+.band>*{position:relative;z-index:1}
+@media(max-width:900px){.curtain{border-radius:28px 28px 0 0;margin-top:-28px}.hero{padding-bottom:28px}.band::after{width:340px;height:340px}.head.in::after{width:90px}}
+@media(prefers-reduced-motion:reduce){.w{opacity:1;transform:none;filter:none}.rvt img{clip-path:none}.hero-bg{inset:0}}
+
+/* ===== v4: card effects, dock, chatbot ===== */
+.card{perspective:1100px}
+.card .ph{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.card:hover .ph{box-shadow:0 36px 60px -30px rgba(58,19,15,.55)}
+.card .ph::before{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.4),transparent 55%);opacity:0;transition:opacity .4s;pointer-events:none;mix-blend-mode:soft-light}
+.card:hover .ph::before{opacity:1}
+.card .ph::after{z-index:3}
+.card .fr{position:absolute;inset:12px;z-index:3;border:1px solid rgba(220,184,114,.95);opacity:0;transform:scale(1.08);transition:opacity .5s,transform .7s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.card:hover .fr{opacity:1;transform:none}
+.card .bd{position:absolute;left:12px;top:12px;z-index:4;padding:6px 11px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:var(--ink);background:rgba(251,247,241,.92);backdrop-filter:blur(6px)}
+.card .wl{position:absolute;right:12px;top:12px;z-index:4;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(251,247,241,.94);color:var(--oxblood);cursor:pointer;opacity:0;transform:scale(.7);transition:opacity .35s,transform .35s cubic-bezier(.2,.9,.3,1.4),background .25s}
+.card:hover .wl,.card .wl.on,.card .wl:focus-visible{opacity:1;transform:none}
+.card .wl:hover{background:#fff}
+.card .wl svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;transition:fill .25s,stroke .25s}
+.card .wl.on svg{fill:var(--wine);stroke:var(--wine)}
+@media(hover:none){.card .wl{opacity:1;transform:none}}
+
+/* dock: instagram, whatsapp, chat */
+.dock a.ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);border-color:transparent;color:#fff}
+.dock svg{width:21px;height:21px}.dock{align-items:center}
+.chatbtn{position:relative;width:54px;height:54px;border-radius:50%;border:1px solid rgba(220,184,114,.55);background:linear-gradient(135deg,#4a1a14,#2a0e0b);color:var(--gold-l);display:grid;place-items:center;cursor:pointer;box-shadow:0 14px 30px -8px rgba(0,0,0,.55);transition:transform .25s}
+.chatbtn:hover{transform:translateY(-3px)}
+.chatbtn::before{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--gold-l);animation:pulse 2.6s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+.chatbtn .x{display:none}.chatbtn.on .x{display:block}.chatbtn.on .c{display:none}.chatbtn.on::before{animation:none;opacity:0}
+.chatbtn svg{width:24px;height:24px}
+.tip{position:fixed;right:84px;bottom:30px;z-index:50;background:var(--ivory);color:var(--ink);padding:12px 16px;font-size:14px;box-shadow:0 14px 34px -12px rgba(0,0,0,.45);border:1px solid var(--line);opacity:0;transform:translateX(10px);pointer-events:none;transition:opacity .4s,transform .4s;max-width:210px;line-height:1.4}
+.tip.show{opacity:1;transform:none;pointer-events:auto;cursor:pointer}
+.tip::after{content:"";position:absolute;right:-6px;bottom:18px;width:11px;height:11px;background:var(--ivory);border-right:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+.chat{position:fixed;right:90px;bottom:22px;z-index:60;width:min(390px,calc(100vw - 32px));height:min(580px,calc(100vh - 44px));display:flex;flex-direction:column;background:var(--ivory);border:1px solid rgba(220,184,114,.45);box-shadow:0 40px 90px -20px rgba(20,8,6,.6);transform-origin:bottom right;opacity:0;visibility:hidden;transform:scale(.9) translateY(14px);transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1),visibility 0s .45s}
+.chat.open{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.chat-h{display:flex;align-items:center;gap:14px;padding:18px 18px;background:radial-gradient(120% 200% at 0 0,#5c2018,#2a0e0b);color:#fff;border-bottom:1px solid rgba(220,184,114,.35)}
+.chat-av{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold-l);font:600 22px var(--serif);color:var(--gold-l)}
+.chat-h b{display:block;font:500 21px/1.1 var(--serif);letter-spacing:.02em}
+.chat-h small{display:flex;align-items:center;gap:7px;font-size:11.5px;letter-spacing:.06em;color:rgba(255,255,255,.7);margin-top:3px}
+.chat-h small::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ddc84}
+.chat-x{margin-left:auto;background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer;opacity:.8;padding:4px 8px}
+.chat-x:hover{opacity:1}
+.chat-log{flex:1;overflow-y:auto;padding:20px 16px 8px;background:var(--cream);display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+.m{max-width:86%;padding:12px 15px;font-size:14.5px;line-height:1.55;animation:pop .35s cubic-bezier(.2,.8,.2,1) both;word-wrap:break-word}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+.m.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:2px 14px 14px 14px}
+.m.me{align-self:flex-end;background:var(--oxblood);color:#fff;border-radius:14px 2px 14px 14px}
+.m .ln{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.m .ln a{padding:7px 12px;border:1px solid var(--gold);color:var(--oxblood);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:400;transition:background .25s,color .25s}
+.m .ln a:hover{background:var(--oxblood);color:#fff;border-color:var(--oxblood)}
+.m.typing{display:flex;gap:5px;padding:15px 16px}
+.m.typing i{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:bl 1s infinite}
+.m.typing i:nth-child(2){animation-delay:.15s}.m.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-4px)}}
+.chips{display:flex;gap:7px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:6px 16px 12px;background:var(--cream)}.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;white-space:nowrap;background:none;border:1px solid rgba(185,139,62,.7);color:var(--oxblood);padding:7px 13px;font:400 12.5px var(--sans);cursor:pointer;transition:background .25s,color .25s}
+.chips button:hover{background:var(--gold-l);color:var(--ink)}
+.chat-f{display:flex;border-top:1px solid var(--line);background:#fff}
+.chat-f input{flex:1;border:0;padding:17px 16px;font:300 15px var(--sans);outline:none;background:transparent;color:var(--ink);min-width:0}
+.chat-f button{border:0;background:none;color:var(--wine);padding:0 18px;cursor:pointer;font:500 12px var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.chat-f button:hover{color:var(--gold)}
+.chat-note{text-align:center;font-size:10.5px;letter-spacing:.08em;color:var(--muted);padding:6px 10px 8px;background:#fff}
+@media(max-width:600px){
+ .chat{right:12px;left:12px;bottom:12px;width:auto;height:min(80vh,640px)}
+ body.chat-open .dock,body.chat-open .tip{opacity:0;pointer-events:none}
+ .tip{right:78px;max-width:170px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.chatbtn::before{display:none}.card .ph{transform:none!important}}
+
+/* ===== v5: premium dock ===== */
+.dock{right:18px;bottom:22px;gap:6px;padding:8px;border-radius:999px;background:linear-gradient(180deg,rgba(46,24,19,.88),rgba(18,8,6,.92));backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(220,184,114,.4);box-shadow:0 28px 54px -18px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.09);animation:dockin 1s .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes dockin{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+.dock>a{width:44px;height:44px;border:0;background:rgba(255,255,255,.06);color:var(--gold-l);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;transition:background .35s,color .35s,box-shadow .35s}
+.dock>a:hover{transform:none}
+.dock>a.ig:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);color:#fff;box-shadow:0 8px 22px -6px rgba(214,36,159,.7)}
+.dock>a.wa{background:rgba(255,255,255,.06);color:var(--gold-l)}
+.dock>a.wa:hover{background:#25d366;color:#fff;box-shadow:0 8px 22px -6px rgba(37,211,102,.75)}
+.dock>a.ig{background:rgba(255,255,255,.06);color:var(--gold-l);border:0}
+.dock svg{width:20px;height:20px}
+.sep{display:block;height:1px;margin:3px 10px;background:linear-gradient(90deg,transparent,rgba(220,184,114,.55),transparent)}
+.chatbtn{width:52px;height:52px;border:0;background:linear-gradient(135deg,#f0d696,#b98b3e);color:#1d1311;box-shadow:0 10px 24px -6px rgba(185,139,62,.85),inset 0 1px 0 rgba(255,255,255,.5)}
+.chatbtn:hover{transform:scale(1.06)}
+.chatbtn svg{width:23px;height:23px}
+.dock>a span,.chatbtn span{position:absolute;right:calc(100% + 24px);top:50%;background:linear-gradient(180deg,#2a130f,#170a08);color:#f3e3c4;border:1px solid rgba(220,184,114,.35);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;padding:9px 15px;white-space:nowrap;opacity:0;pointer-events:none;transform:translate(8px,-50%);transition:opacity .3s,transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+.dock>a span::after,.chatbtn span::after{content:"";position:absolute;right:-5px;top:50%;width:8px;height:8px;background:#1d0e0b;border-right:1px solid rgba(220,184,114,.35);border-top:1px solid rgba(220,184,114,.35);transform:translateY(-50%) rotate(45deg)}
+.dock>a:hover span,.chatbtn:hover span{opacity:1;transform:translate(0,-50%)}
+.chatbtn.on span{display:none}
+.tip{right:102px;bottom:34px}
+.chat{right:104px}
+@media(hover:none){.dock>a span,.chatbtn span{display:none}}
+@media(max-width:600px){
+ .dock{right:12px;bottom:14px;padding:6px;gap:5px}
+ .dock>a{width:40px;height:40px}.chatbtn{width:46px;height:46px}
+ .tip{right:84px;bottom:24px}
+ .chat{right:12px}
+}
+
+/* ===== v6: premium loader ===== */
+body.loading{overflow:hidden}
+#loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;color:#fff;overflow:hidden}
+.ld-p{position:absolute;left:0;right:0;height:50.3%;overflow:hidden;transition:transform 1.15s cubic-bezier(.76,0,.24,1) .2s}
+.ld-p{background:radial-gradient(60% 50% at 50% 50%,rgba(185,139,62,.3),transparent 72%),linear-gradient(160deg,#4a1a14,#210908);background-size:100% 200%,100% 200%}
+.ld-p.t{top:0;background-position:0 0,0 0}
+.ld-p.b{bottom:0;background-position:0 100%,0 100%}
+.ld-p::before{content:"";position:absolute;inset:-20px;background:repeating-linear-gradient(90deg,rgba(220,184,114,.07) 0 1px,transparent 1px 16px),repeating-linear-gradient(0deg,rgba(220,184,114,.05) 0 1px,transparent 1px 16px);animation:ldw 16s linear infinite}
+@keyframes ldw{to{transform:translate(16px,16px)}}
+.ld-p::after{content:"";position:absolute;inset:0;opacity:.1;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.ld-c,.ld-n,.ld-t{transition:opacity .45s ease,transform .6s ease}
+.ld-c{position:relative;z-index:2;text-align:center;padding:0 20px}
+.ld-eye{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-l);margin-bottom:26px;opacity:0;animation:ldf 1s .15s ease forwards}
+.ld-logo{display:flex;justify-content:center;font:500 clamp(52px,11vw,132px)/1 var(--serif);letter-spacing:.26em;margin-right:-.26em}
+.ld-logo span{display:inline-block;opacity:0;transform:translateY(45%);filter:blur(12px);background:linear-gradient(180deg,#fff 20%,#e6c685 100%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:ldl 1.1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.35s + var(--i)*.1s)}
+@keyframes ldl{to{opacity:1;transform:none;filter:none}}
+@keyframes ldf{to{opacity:1}}
+.ld-line{position:relative;width:min(360px,72vw);height:1px;margin:38px auto 0;background:rgba(220,184,114,.22);opacity:0;animation:ldf .8s .9s ease forwards}
+.ld-line i{position:absolute;left:0;top:0;bottom:0;width:calc(var(--p,0)*1%);background:linear-gradient(90deg,var(--gold),var(--gold-l))}
+.ld-line b{position:absolute;top:50%;left:calc(var(--p,0)*1%);width:8px;height:8px;background:var(--gold-l);transform:translate(-50%,-50%) rotate(45deg);box-shadow:0 0 18px 3px rgba(220,184,114,.6)}
+.ld-n{position:absolute;left:clamp(20px,4vw,48px);bottom:clamp(18px,4vh,40px);z-index:2;font:500 clamp(44px,7vw,84px)/1 var(--serif);color:rgba(255,255,255,.92);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.ld-n small{font-size:.32em;color:var(--gold-l);margin-left:6px;letter-spacing:.2em}
+.ld-t{position:absolute;right:clamp(20px,4vw,48px);bottom:clamp(24px,5vh,50px);z-index:2;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,237,224,.6);text-align:right}
+#loader.done{pointer-events:none}
+#loader.done .ld-c{opacity:0;transform:scale(1.06)}
+#loader.done .ld-n,#loader.done .ld-t{opacity:0}
+#loader.done .ld-p.t{transform:translateY(-101%)}
+#loader.done .ld-p.b{transform:translateY(101%)}
+.loading .hero-copy>*,.loading .dock{animation-play-state:paused}
+.loading .hero-bg .s img,.loading .hero-bg .s.on img{transform:scale(1.14);transition:none}
+@media(max-width:600px){.ld-t{display:none}.ld-eye{letter-spacing:.24em;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.ld-logo span,.ld-eye,.ld-line{opacity:1;transform:none;filter:none}.ld-p::before{animation:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}.s img{transform:none}}
+</style></head><body><noscript><style>#loader{display:none}body.loading{overflow:auto}</style></noscript>
+<div id="loader" aria-hidden="true"><div class="ld-p t"></div><div class="ld-p b"></div>
+<div class="ld-c"><div class="ld-eye">Handloom &middot; Direct from weavers</div>
+<div class="ld-logo"><span style="--i:0">L</span><span style="--i:1">A</span><span style="--i:2">K</span><span style="--i:3">I</span><span style="--i:4">R</span><span style="--i:5">A</span></div>
+<div class="ld-line"><i></i><b></b></div></div>
+<div class="ld-n"><span id="ldNum">00</span><small>%</small></div><div class="ld-t">Handwoven<br>in India</div></div>
+<script>
+(function(){
+ var L=document.getElementById('loader');if(!L)return;
+ var B=document.body;B.classList.add('loading');
+ var num=document.getElementById('ldNum'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,
+ MIN=reduce?500:2600,MAX=6000,t0=Date.now(),p=0,loaded=document.readyState==='complete',fin=false;
+ addEventListener('load',function(){loaded=true});
+ function paint(v){L.style.setProperty('--p',v.toFixed(2));var r=Math.round(v);num.textContent=r<10?'0'+r:r}
+ function finish(){
+  if(fin)return;fin=true;paint(100);
+  setTimeout(function(){L.classList.add('done');setTimeout(function(){B.classList.remove('loading')},450);setTimeout(function(){L.remove()},1800)},350);
+ }
+ function tick(){
+  if(fin)return;
+  var el=Date.now()-t0,base=Math.min(el/MIN,1),ease=1-Math.pow(1-base,3),target=Math.min(ease*100,loaded?100:90);
+  p+=(target-p)*.14;paint(p);
+  if((loaded&&el>=MIN&&p>99.4)||el>MAX){finish();return}
+  requestAnimationFrame(tick);
+ }
+ paint(0);requestAnimationFrame(tick);
+})();
+</script>
+
+<div class="top">Handwoven sarees direct from artisans<b>&bull;</b><span class="t2">Cash on Delivery on eligible orders</span></div>
+<header id="hdr"><div class="wrap bar"><a class="logo" href="/">LAKIRA</a>
+<nav id="nav"><a href="/collections/sarees">Sarees</a><a href="/collections/new-arrivals">New Arrivals</a><a href="/collections/best-seller">Best Sellers</a><a href="/collections/blouses/BLOUSE">Blouses</a><a href="/collections/rare-art">Rare Art</a><a href="#faq">FAQ</a><a href="#stores">Stores</a></nav>
+<a class="hbtn" href="#stores">Visit Store</a>
+<button class="menu" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button></div><i class="hprog" id="hprog"></i></header>
+
+<section class="hero"><div class="hero-bg" id="slides"><figure class="s on" data-name="Linen Story" data-href="/collections/linen-sarees"><img src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=1800&q=75" alt="Linen Story saree"></figure><figure class="s" data-name="The Silk Saga" data-href="/collections/silk-sarees"><img src="https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=1800&q=75" alt="The Silk Saga saree"></figure><figure class="s" data-name="Banarasi Tales" data-href="/collections/banarasi-tales"><img src="https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=1800&q=75" alt="Banarasi Tales saree"></figure><figure class="s" data-name="Jamdani Yarns" data-href="/collections/jamdani-yarns"><img src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=1800&q=75" alt="Jamdani Yarns saree"></figure></div>
+<div class="wrap hero-grid">
+<div class="hero-copy"><div class="eyebrow">Handloom &middot; Direct from weavers</div>
+<h1>Woven by hand.<em>Worn with heart.</em></h1>
+<p class="hero-lead">Handloom linen, silk, cotton, Jamdani and Banarasi sarees, straight from the artisans who weave them.</p>
+<div class="hero-cta"><a class="h-btn" href="/collections/sarees">Shop Sarees <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h16M11 1l5 5-5 5"/></svg></a><a class="h-link" href="#stores">Find a Store</a></div></div>
+</div>
+<div class="hero-ctrl"><div class="wrap"><div class="now">Now showing<a id="cap" href="/collections/linen-sarees"><span id="capn">Linen Story</span></a></div>
+<div class="ctrl"><div class="n"><b id="cn">01</b> / 04</div><div class="bars" id="hd"><button class="on" aria-label="Slide 1"><i></i></button><button aria-label="Slide 2"><i></i></button><button aria-label="Slide 3"><i></i></button><button aria-label="Slide 4"><i></i></button></div></div></div></div>
+<div class="strip"><div class="wrap"><p>Direct from artisans</p><p>Handwoven in India</p><p>Styling help on WhatsApp</p><p>COD on eligible orders</p></div></div>
+</section>
+
+<div class="curtain"><section class="intro"><div class="eyebrow dark">The House of Handloom</div><h2>The LAKIRA Sarees</h2><p>Exquisite, handmade, handwoven creations directly from the artisans. Our designs bring together ethnic elements, contemporary elegance and great quality.</p></section></div>
+
+<section class="sec"><div class="wrap">
+<div class="head"><div class="tabs"><button class="on" data-t="t1">Best Sellers</button><button data-t="t2">New Arrivals</button></div><a class="link" href="/collections/best-seller">View all</a></div>
+<div class="grid" id="t1"><a class="card" href="/products/maroon-gold-and-silver-thick-vertical-striped-linen-saree"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt="Maroon, Gold and Silver Thick Vertical Striped Linen Saree"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Maroon, Gold and Silver Thick Vertical Striped Linen Saree</h3><p class="price">Rs. 10,990.00</p></a>
+<a class="card" href="/products/pearl-white-chanderi-saree-with-a-striking-red-border"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt="Pearl White Chanderi Saree with a striking Red Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Pearl White Chanderi Saree with a striking Red Border</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/products/pearl-white-chanderi-saree-with-a-striking-yellow-boarder"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Pearl White Chanderi Saree with a striking Yellow Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Pearl White Chanderi Saree with a striking Yellow Border</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/products/navy-teal-textured-linen-saree-with-stripped-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt="Navy Teal Textured Linen Saree With Striped Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Navy Teal Textured Linen Saree With Striped Gold Zari Border & Pallu</h3><p class="price">Rs. 9,990.00</p></a>
+<a class="card" href="/products/greenish-grey-organic-textured-linen-saree-with-a-striking-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt="Sage Green Organic Textured Linen Saree With a striking Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Sage Green Organic Textured Linen Saree With a striking Gold Zari Border & Pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/products/burgundy-linen-saree-with-a-striking-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1646979200020-941e1deb2670?auto=format&fit=crop&w=600&q=70" alt="Burgundy Linen Saree with a Striking Zari Border & pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Burgundy Linen Saree with a Striking Zari Border & pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/products/white-linen-saree-with-a-striking-red-border"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="White Linen Saree with A Striking Red Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>White Linen Saree with A Striking Red Border</h3><p class="price">Rs. 10,990.00</p></a>
+<a class="card" href="/products/midnight-blue-cotton-saree-with-a-stunning-red-and-silver-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt="Midnight Blue Cotton Saree With a Stunning Red and Silver Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Midnight Blue Cotton Saree With a Stunning Red and Silver Pallu</h3><p class="price">Rs. 5,950.00</p></a>
+<a class="card" href="/products/red-cotton-saree-with-a-stunning-black-and-gold-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1646979200020-941e1deb2670?auto=format&fit=crop&w=600&q=70" alt="Red Cotton Saree With a Stunning Black and Gold Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Red Cotton Saree With a Stunning Black and Gold Pallu</h3><p class="price">Rs. 5,950.00</p></a>
+<a class="card" href="/products/evening-blue-rose"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=600&q=70" alt="Evening Blue Rose"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189025857-f42fe6e8dd91?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Evening Blue Rose</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/rose-garden-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Rose Garden"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Rose Garden</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/stunning-black-linen-saree-with-red-border-woven-in-sequence"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt="Stunning Black Linen Saree With Red Border & Woven In Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Stunning Black Linen Saree With Red Border & Woven In Sequence</h3><p class="price">Rs. 10,990.00</p></a></div><div class="grid hide" id="t2"><a class="card" href="/products/midnight-blue-resham-silk-saree-with-stunning-woven-in-sequence-along-the-border-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Amber Resham Silk Saree With Woven In sequence along the Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Amber Resham Silk Saree With Woven In sequence along the Border</h3><p class="price">Rs. 13,960.00</p></a>
+<a class="card" href="/products/stunning-fuchsia-silk-chanderi-saree-with-woven-buttas"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Stunning Fuchsia Silk Chanderi Saree With Woven Antique Buttas"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Stunning Fuchsia Silk Chanderi Saree With Woven Antique Buttas</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/stunning-black-linen-saree-with-grey-border-woven-in-sequence"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Stunning Black Linen Saree With Grey Border & Woven In Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Stunning Black Linen Saree With Grey Border & Woven In Sequence</h3><p class="price">Rs. 10,990.00</p></a>
+<a class="card" href="/products/golden-beige-matka-silk-saree-with-woven-in-shell-sequence-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt="A Vibrant Teal Matka Silk Saree With Woven In Shell Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>A Vibrant Teal Matka Silk Saree With Woven In Shell Sequence</h3><p class="price">Rs. 12,970.00</p></a>
+<a class="card" href="/products/golden-beige-matka-silk-saree-with-woven-in-shell-sequence"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Golden Beige Matka Silk Saree With Woven In Shell Sequence"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Golden Beige Matka Silk Saree With Woven In Shell Sequence</h3><p class="price">Rs. 12,970.00</p></a>
+<a class="card" href="/products/volt-green-silk-chanderi-saree-with-silver-fish-buttas-along-the-length-of-the-saree"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt="Volt Green Silk Chanderi Saree With Silver Fish Buttas Along The Length of the Saree"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Volt Green Silk Chanderi Saree With Silver Fish Buttas Along The Length of the Saree</h3><p class="price">Rs. 23,950.00</p></a>
+<a class="card" href="/products/coral-blossom-textured-linen-saree-with-a-striking-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Coral Blossom Textured Linen Saree With A Striking Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Coral Blossom Textured Linen Saree With A Striking Gold Zari Border & Pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/products/ocean-blue-cotton-chanderi-saree-with-gold-zari-design"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt="Ocean Blue Silk Cotton Chanderi Saree With Gold Zari Design"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Ocean Blue Silk Cotton Chanderi Saree With Gold Zari Design</h3><p class="price">Rs. 7,930.00</p></a></div></div></section>
+
+<section class="sec alt"><div class="wrap"><div class="tiles"><a class="tile wide" href="/collections/linen-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=900&q=70" alt="Linen Story"><span>Linen Story</span></a>
+<a class="tile wide" href="/collections/silk-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=900&q=70" alt="The Silk Saga"><span>The Silk Saga</span></a>
+<a class="tile wide" href="/collections/banarasi-tales"><img loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=900&q=70" alt="Banarasi Tales"><span>Banarasi Tales</span></a>
+<a class="tile " href="/collections/cotton-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=900&q=70" alt="Cotton Chronicles"><span>Cotton Chronicles</span></a>
+<a class="tile " href="/collections/jamdani-yarns"><img loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=900&q=70" alt="Jamdani Yarns"><span>Jamdani Yarns</span></a></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="head"><h2>Exquisite Linen Collection</h2><a class="link" href="/collections/linen-sarees">View all</a></div>
+<div class="grid"><a class="card" href="/collections/linen-sarees/products/test-2"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="White Linen Saree with Zari Stripes and a Subtle Gold Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>White Linen Saree with Zari Stripes and a Subtle Gold Border</h3><p class="price">Rs. 11,980.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/red-linen-saree-with-silver-zari-horizontal-strips"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1729101143873-d80050bae219?auto=format&fit=crop&w=600&q=70" alt="Red Linen Saree With Silver Zari Horizontal Stripes"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Red Linen Saree With Silver Zari Horizontal Stripes</h3><p class="price">Rs. 9,910.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/absolutely-stunning-caramel-textured-linen-saree-with-gold-zari-border-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Absolutely Stunning Caramel Textured Linen Saree With Gold Zari Border & Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Absolutely Stunning Caramel Textured Linen Saree With Gold Zari Border & Pallu</h3><p class="price">Rs. 11,620.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/white-linen-saree-with-geometric-jamdani-work-along-the-border-and-on-the-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1609748340878-c690e3e4706b?auto=format&fit=crop&w=600&q=70" alt="White Linen Saree With Geometric Jamdani Work along the border and on the Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>White Linen Saree With Geometric Jamdani Work along the border and on the Pallu</h3><p class="price">Rs. 9,730.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/black-linen-saree-with-geometric-jamdani-work-along-the-border-and-on-the-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Black Linen Saree With Geometric Jamdani Work along the border and on the Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Black Linen Saree With Geometric Jamdani Work along the border and on the Pallu</h3><p class="price">Rs. 9,730.00</p></a>
+<a class="card" href="/collections/linen-sarees/products/bronze-linen-saree-with-zari-stripes"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Bronze Tissue Linen Saree With Thin Zari Stripes"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Bronze Tissue Linen Saree With Thin Zari Stripes</h3><p class="price">Rs. 10,990.00</p></a></div></div></section>
+
+<section class="band"><h2>The Saree Kaleidoscope</h2><p>The finest textiles from the land of India have been woven for centuries into the six-yard drape, the incomparable saree.</p>
+<a class="btn" href="/collections/linen-sarees">Linen Story</a><a class="btn" href="/collections/silk-sarees">The Silk Saga</a></section>
+
+<section class="sec"><div class="wrap"><div class="head"><h2>Stunning Silk Sarees</h2><a class="link" href="/collections/silk-sarees">View all</a></div>
+<div class="grid"><a class="card" href="/collections/silk-sarees/products/midnight-blue-maslin-silk-saree-with-zari-buttas-and-jamdani-design-in-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189025857-f42fe6e8dd91?auto=format&fit=crop&w=600&q=70" alt="Midnight Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189013429-a703f4b245cf?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Midnight Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/fuchsia-pink-muslin-silk-saree-with-zari-jamdani-design"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design</h3><p class="price">Rs. 14,950.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/cobalt-blue-muslin-silk-saree-with-zari-buttas-and-jamdani-design-in-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt="Cobalt Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1609748513078-9ff6232781c5?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Cobalt Blue Muslin Silk Saree with Zari Buttas and Jamdani Design in Pallu</h3><p class="price">Rs. 16,930.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/fuchsia-pink-muslin-silk-saree-with-zari-jamdani-design-1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=70" alt="Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Fuchsia Pink Muslin Silk Saree with Zari Jamdani Design</h3><p class="price">Rs. 13,960.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/forest-green-muslin-silk-saree-with-woven-in-sequence-along-the-border"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189012906-4c0aa9b9781e?auto=format&fit=crop&w=600&q=70" alt="Forest Green Muslin Silk Saree With Woven In Sequence along the Border"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1679006831648-7c9ea12e5807?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Forest Green Muslin Silk Saree With Woven In Sequence along the Border</h3><p class="price">Rs. 13,960.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/pecan-brown-silver-grey-silk-chanderi-saree-with-a-stunning-mustard-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt="Pecan Brown & Silver Grey Silk Chanderi Saree with a Stunning Mustard Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Pecan Brown & Silver Grey Silk Chanderi Saree with a Stunning Mustard Pallu</h3><p class="price">Rs. 15,940.00</p></a>
+<a class="card" href="/collections/silk-sarees/products/walnut-brown-red-silk-chanderi-saree-with-a-stunning-sunset-gold-pallu"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026297-df356264479c?auto=format&fit=crop&w=600&q=70" alt="Walnut Brown & Red Silk Chanderi Saree with a Stunning Sunset Gold Pallu"><img class="alt" loading="lazy" src="https://images.unsplash.com/photo-1572470176170-98fa8abcb741?auto=format&fit=crop&w=600&q=70" alt=""></div><h3>Walnut Brown & Red Silk Chanderi Saree with a Stunning Sunset Gold Pallu</h3><p class="price">Rs. 15,940.00</p></a></div></div></section>
+
+<section class="sec alt" id="faq"><div class="wrap faq"><h2>Frequently Asked Questions</h2><details><summary>How do I know the sarees are handwoven?</summary><p>Every LAKIRA saree is sourced directly from weaving artisans. Each product page lists the fabric (linen, silk, cotton, Jamdani, Banarasi and more) and weave details so you know exactly what you are buying.</p></details>
+<details><summary>Do slight colour differences occur?</summary><p>Handwoven fabric can vary slightly in shade and texture from batch to batch, and screens display colour differently. These small variations are part of the handloom character.</p></details>
+<details><summary>How long does delivery take?</summary><p>Delivery times depend on your location and the product. Please see our Shipping & Delivery page for current timelines and charges.</p></details>
+<details><summary>Can I return or exchange a saree?</summary><p>Our Refund & Exchange policy explains eligibility and the steps to request a return or exchange. You can read it on the Refund & Exchange page or contact us for help.</p></details>
+<details><summary>Is Cash on Delivery available?</summary><p>Cash on Delivery may be offered on eligible orders and can require mobile number verification by OTP at checkout.</p></details>
+<details><summary>How should I care for linen and silk sarees?</summary><p>Dry-clean silk sarees and store them folded in a muslin cloth. Linen can be gently hand-washed in cold water or dry-cleaned, and softens beautifully with every wear. Avoid direct sunlight when drying.</p></details>
+<details><summary>Can I visit a store or get styling help?</summary><p>Yes. Visit us in Pune or call/WhatsApp us and our team will help you choose a saree, blouse or dupatta.</p></details></div></section>
+
+<section class="sec" id="stores"><div class="wrap"><div class="head"><h2>Store Locations</h2></div>
+<div class="stores"><div class="scard"><h3>Pune Store</h3><p>WOVEN TREASURES<br>Villa 6, Uday Bang Farm House, B.T. Kawade Road, Pune - 411013, Maharashtra</p><p>+91 9637845544<br>+91 9359217323<br>info@thearyavart.com</p>
+<a class="cta" href="https://www.google.com/maps/search/?api=1&query=Uday+Bang+Farm+House+B.T.+Kawade+Road+Pune+411013" target="_blank" rel="noopener">Get Directions</a><a class="cta ghost" href="tel:+919637845544">Call Store</a></div>
+<iframe class="map" title="LAKIRA Pune store map" loading="lazy" src="https://maps.google.com/maps?q=B.T.+Kawade+Road,+Pune+411013&output=embed"></iframe></div></div></section>
+
+<section class="sec alt"><div class="wrap"><div class="head"><h2>From the Journal</h2><a class="link" href="/blogs/aryavart">View all</a></div><div class="posts"><a class="post" href="/blogs/aryavart/organza-hand-painted-sarees"><img loading="lazy" src="https://images.unsplash.com/photo-1610189026205-27510cfc52f8?auto=format&fit=crop&w=600&q=70" alt="Organza hand painted sarees"><time>Apr 08, 2021</time><h3>Organza hand painted sarees</h3></a>
+<a class="post" href="/blogs/aryavart/explore-wide-range-of-silk-sarees-for-wedding"><img loading="lazy" src="https://images.unsplash.com/photo-1619516388835-2b60acc4049e?auto=format&fit=crop&w=600&q=70" alt="Explore wide range of Silk Sarees For Wedding"><time>Mar 20, 2021</time><h3>Explore wide range of Silk Sarees For Wedding</h3></a>
+<a class="post" href="/blogs/aryavart/enhance-your-beauty-with-elegant-chiffon-saree"><img loading="lazy" src="https://images.unsplash.com/photo-1646979200020-941e1deb2670?auto=format&fit=crop&w=600&q=70" alt="Enhance Your Beauty with Elegant Chiffon Saree"><time>Mar 20, 2021</time><h3>Enhance Your Beauty with Elegant Chiffon Saree</h3></a></div></div></section>
+
+<footer><div class="wrap"><div class="fcols">
+<div><h4>Information</h4><ul><li><a href="/pages/privacy-policy">Privacy Policy</a></li><li><a href="/pages/shipping-policy">Shipping &amp; Delivery</a></li><li><a href="/pages/terms-and-conditions">Terms &amp; Conditions</a></li><li><a href="/policies/refund-policy">Refund &amp; Exchange</a></li><li><a href="/pages/contact-us">Contact Us</a></li><li><a href="/pages/about-us">About Us</a></li></ul></div>
+<div><h4>Shop</h4><ul><li><a href="/collections/sarees">Sarees</a></li><li><a href="/collections/new-arrivals">New Arrivals</a></li><li><a href="/collections/best-seller">Best Sellers</a></li><li><a href="/collections/blouses/BLOUSE">Blouses</a></li><li><a href="#faq">FAQ</a></li><li><a href="#stores">Store Locations</a></li></ul></div>
+<div><h4>Sign up and save</h4><p style="font-size:15px">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p><form class="sub" onsubmit="return false"><input type="email" placeholder="Enter your email" aria-label="Email"><button>Subscribe</button></form></div>
+<div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/thearyavart">Instagram</a></li><li><a href="https://www.facebook.com/pg/aryavart2018/posts/">Facebook</a></li><li><a href="https://www.youtube.com/watch?v=cSSq0lWAxBs">YouTube</a></li></ul></div>
+</div><div class="copy">&copy; 2026 LAKIRA</div></div></footer>
+
+<div class="dock">
+<a class="ig" href="https://www.instagram.com/thearyavart" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+<a class="wa" href="https://wa.me/919637845544" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.5z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-.9.7c-.8-.4-1.6-1.2-2-2l.7-.9-1-2z"/></svg><span>WhatsApp</span></a>
+<i class="sep"></i>
+<button class="chatbtn" id="chatBtn" aria-label="Chat with LAKIRA assistant" aria-expanded="false" aria-controls="chat"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.5L3 21l1.6-4.9A8.5 8.5 0 1 1 21 12z"/><path d="M8.5 11.5h7M8.5 14.5h4.5"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Chat with us</span></button>
+</div>
+<div class="tip" id="chatTip">Need help choosing a saree? Ask me.</div>
+<div class="chat" id="chat" role="dialog" aria-label="LAKIRA assistant">
+<div class="chat-h"><div class="chat-av">L</div><div><b>LAKIRA Assistant</b><small>Instant answers &middot; Team on WhatsApp</small></div><button class="chat-x" id="chatX" aria-label="Close chat">&times;</button></div>
+<div class="chat-log" id="chatLog" aria-live="polite"></div>
+<div class="chips" id="chatChips"></div>
+<form class="chat-f" id="chatForm"><input id="chatIn" type="text" placeholder="Ask about sarees, delivery, care..." autocomplete="off" aria-label="Your message"><button type="submit">Send</button></form>
+<div class="chat-note">Automated assistant. For personal help, tap WhatsApp.</div>
+</div>
+<script>
+(function(){
+ var hero=document.querySelector('.hero'),slides=[].slice.call(document.querySelectorAll('#slides .s')),
+ bars=[].slice.call(document.querySelectorAll('#hd button')),cap=document.getElementById('cap'),
+ capn=document.getElementById('capn'),cn=document.getElementById('cn'),i=0,tm,
+ reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ function go(n){
+  i=(n+slides.length)%slides.length;
+  slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+  bars.forEach(function(b,k){b.classList.remove('on');if(k===i){void b.offsetWidth;b.classList.add('on')}});
+  capn.textContent=slides[i].dataset.name;cap.href=slides[i].dataset.href;cn.textContent='0'+(i+1);
+ }
+ function run(){clearInterval(tm);if(!reduce)tm=setInterval(function(){go(i+1)},6500)}
+ bars.forEach(function(b,k){b.addEventListener('click',function(){go(k);run()})});
+ run();
+ document.addEventListener('visibilitychange',function(){document.hidden?clearInterval(tm):run()});
+ /* gentle parallax */
+ if(matchMedia('(pointer:fine)').matches&&!reduce){
+  var els=hero.querySelectorAll('[data-d]');
+  hero.addEventListener('mousemove',function(e){
+   var r=hero.getBoundingClientRect(),dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;
+   els.forEach(function(m){var k=parseFloat(m.dataset.d);m.style.translate=(dx*k)+'px '+(dy*k)+'px'});
+  });
+  hero.addEventListener('mouseleave',function(){els.forEach(function(m){m.style.translate='0 0'})});
+ }
+ /* tabs */
+ document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('.tabs button').forEach(function(x){x.classList.toggle('on',x===b)});
+  ['t1','t2'].forEach(function(id){document.getElementById(id).classList.toggle('hide',id!==b.dataset.t)});
+ })});
+ /* scroll-aware nav */
+ var hdr=document.getElementById('hdr'),hp=document.getElementById('hprog'),nav=document.getElementById('nav'),last=scrollY,tick=false;
+ function onS(){
+  var y=scrollY,max=document.documentElement.scrollHeight-innerHeight;
+  hdr.classList.toggle('scrolled',y>40);
+  hp.style.transform='scaleX('+(max>0?Math.min(y/max,1):0)+')';
+  if(y>320&&y>last+6&&!nav.classList.contains('open')){hdr.classList.add('hide')}
+  else if(y<last-6||y<=320){hdr.classList.remove('hide')}
+  fx(y);last=y;tick=false;
+ }
+ addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onS)}},{passive:true});onS();
+ /* back to top */
+ /* saree card effects */
+ var fine=matchMedia('(pointer:fine)').matches,kinds=['Linen','Silk','Chanderi','Cotton','Jamdani','Banarasi','Matka','Resham'],
+ heart='<svg viewBox="0 0 24 24"><path d="M12 20.5s-7.3-4.5-9.2-9C1.6 8.4 3.3 5.3 6.4 5.3c1.9 0 3.2 1 4 2.2l1.6 2.1 1.6-2.1c.8-1.2 2.1-2.2 4-2.2 3.1 0 4.8 3.1 3.6 6.2-1.9 4.5-9.2 9-9.2 9z"/></svg>';
+ document.querySelectorAll('.card .ph').forEach(function(ph){
+  var card=ph.parentNode,title=(card.querySelector('h3')||{}).textContent||'',kind='Handwoven';
+  for(var q=0;q<kinds.length;q++){if(new RegExp(kinds[q],'i').test(title)){kind=kinds[q];break}}
+  var bd=document.createElement('span');bd.className='bd';bd.textContent=kind;
+  var fr=document.createElement('i');fr.className='fr';
+  var wl=document.createElement('span');wl.className='wl';wl.setAttribute('role','button');wl.setAttribute('tabindex','0');wl.setAttribute('aria-label','Save to wishlist');wl.setAttribute('aria-pressed','false');wl.innerHTML=heart;
+  function tog(e){e.preventDefault();e.stopPropagation();var on=wl.classList.toggle('on');wl.setAttribute('aria-pressed',on)}
+  wl.addEventListener('click',tog);wl.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')tog(e)});
+  ph.appendChild(fr);ph.appendChild(bd);ph.appendChild(wl);
+  if(fine&&!reduce){
+   ph.addEventListener('mousemove',function(e){
+    var r=ph.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    ph.style.setProperty('--rx',((.5-y)*9).toFixed(2)+'deg');ph.style.setProperty('--ry',((x-.5)*11).toFixed(2)+'deg');
+    ph.style.setProperty('--mx',(x*100)+'%');ph.style.setProperty('--my',(y*100)+'%');
+   });
+   ph.addEventListener('mouseleave',function(){ph.style.setProperty('--rx','0deg');ph.style.setProperty('--ry','0deg')});
+  }
+ });
+
+ /* chat assistant (scripted answers from site info) */
+ var chat=document.getElementById('chat'),cb=document.getElementById('chatBtn'),log=document.getElementById('chatLog'),
+ form=document.getElementById('chatForm'),inp=document.getElementById('chatIn'),chips=document.getElementById('chatChips'),
+ tip=document.getElementById('chatTip'),started=false,opened=false;
+ var WA='https://wa.me/919637845544';
+ var L={linen:['Linen Story','/collections/linen-sarees'],silk:['The Silk Saga','/collections/silk-sarees'],cotton:['Cotton Chronicles','/collections/cotton-sarees'],jam:['Jamdani Yarns','/collections/jamdani-yarns'],ban:['Banarasi Tales','/collections/banarasi-tales'],best:['Best Sellers','/collections/best-seller'],nw:['New Arrivals','/collections/new-arrivals'],bl:['Blouses','/collections/blouses/BLOUSE'],rare:['Rare Art','/collections/rare-art'],all:['All Sarees','/collections/sarees']};
+ var wa=['Chat on WhatsApp',WA],call=['Call +91 9637845544','tel:+919637845544'];
+ var KB=[
+  {r:/\b(human|agent|person|team|talk|speak|contact|phone|number|email|mail|call|whatsapp|help me)\b/,a:'Our team is happy to help personally. Reach us on WhatsApp or call +91 9637845544, or write to info@thearyavart.com.',l:[wa,call,['Email us','mailto:info@thearyavart.com']]},
+  {r:/\b(store|visit|location|address|pune|directions|shop|showroom|where)\b/,a:'Our store is WOVEN TREASURES, Villa 6, Uday Bang Farm House, B.T. Kawade Road, Pune - 411013, Maharashtra. Our team can also help you choose a saree, blouse or dupatta in person.',l:[['Get directions','https://www.google.com/maps/search/?api=1&query=Uday+Bang+Farm+House+B.T.+Kawade+Road+Pune+411013'],call]},
+  {r:/\b(deliver|delivery|shipping|ship|dispatch|arrive|how long|days)\b/,a:'Delivery times depend on your location and the product. Our Shipping & Delivery page lists current timelines and charges.',l:[['Shipping & Delivery','/pages/shipping-policy']]},
+  {r:/\b(return|exchange|refund|cancel|replace)\b/,a:'Our Refund & Exchange policy explains eligibility and the steps to request a return or exchange. You can also contact us and we will help.',l:[['Refund & Exchange','/policies/refund-policy'],wa]},
+  {r:/\b(cod|cash on delivery|cash|payment|pay)\b/,a:'Cash on Delivery may be offered on eligible orders and can require mobile number verification by OTP at checkout.'},
+  {r:/\b(care|wash|clean|iron|maintain|dry clean|fold)\b/,a:'Dry-clean silk sarees and store them folded in a muslin cloth. Linen can be gently hand-washed in cold water or dry-cleaned, and softens beautifully with every wear. Avoid direct sunlight when drying.'},
+  {r:/\b(colou?r|shade|differ|vary|match|exact)\b/,a:'Handwoven fabric can vary slightly in shade and texture from batch to batch, and screens display colour differently. These small variations are part of the handloom character.'},
+  {r:/\b(real|authentic|genuine|handloom|handwoven|handmade|artisan|weaver|weave)\b/,a:'Every LAKIRA saree is sourced directly from weaving artisans. Each product page lists the fabric and weave details so you know exactly what you are buying.',l:[L.all]},
+  {r:/\b(price|cost|budget|cheap|expensive|range|how much|afford)\b/,a:'Featured sarees on this page currently range from about Rs. 5,950 to Rs. 23,950, depending on fabric and weave. Cotton starts lower; silk and Banarasi are at the higher end.',l:[L.best,L.nw]},
+  {r:/\b(wedding|bridal|bride|festive|festival|party|occasion|diwali|reception)\b/,a:'For weddings and festive occasions, the Silk and Banarasi collections are a lovely place to start. Our team can also help you pair a blouse.',l:[L.silk,L.ban,L.bl]},
+  {r:/\b(office|work|daily|everyday|casual|summer|light|comfortable)\b/,a:'For everyday and office wear, linen and cotton drape lightly and feel comfortable through the day.',l:[L.linen,L.cotton]},
+  {r:/\b(blouse|blouses)\b/,a:'You can browse our blouses here.',l:[L.bl]},
+  {r:/\b(rare|art)\b/,a:'Our Rare Art collection is here.',l:[L.rare]},
+  {r:/\b(best ?seller|popular|favou?rite|top)\b/,a:'Here are our Best Sellers.',l:[L.best]},
+  {r:/\b(new|latest|arrival)\b/,a:'Fresh pieces are in New Arrivals.',l:[L.nw]},
+  {f:function(t){var o=[];if(/linen/.test(t))o.push(L.linen);if(/silk|chanderi|matka|resham|muslin/.test(t))o.push(L.silk);if(/cotton/.test(t))o.push(L.cotton);if(/jamdani/.test(t))o.push(L.jam);if(/banarasi|benarasi|banaras/.test(t))o.push(L.ban);return o},a:'Here is what we have for you.'},
+  {r:/\b(collection|collections|browse|show|saree|sarees|catalog|shop|buy|see|options)\b/,a:'Browse our weaves by fabric. Linen, silk, cotton, Jamdani and Banarasi, all handwoven.',l:[L.linen,L.silk,L.cotton,L.jam,L.ban]},
+  {r:/\b(hi|hello|hey|hii|namaste|good (morning|evening|afternoon))\b/,a:'Namaste! How can I help you today?'},
+  {r:/\b(thanks|thank you|thx|ok|okay)\b/,a:'You are most welcome! Anything else I can help with?'}
+ ];
+ function add(t,who,links){
+  var d=document.createElement('div');d.className='m '+who;var p=document.createElement('span');p.textContent=t;d.appendChild(p);
+  if(links&&links.length){var w=document.createElement('div');w.className='ln';links.forEach(function(x){var a=document.createElement('a');a.textContent=x[0];a.href=x[1];if(/^http/.test(x[1])){a.target='_blank';a.rel='noopener'}w.appendChild(a)});d.appendChild(w)}
+  log.appendChild(d);log.scrollTop=log.scrollHeight;return d;
+ }
+ function answer(q){
+  var t=q.toLowerCase();
+  for(var i=0;i<KB.length;i++){var e=KB[i],hit=false,links=e.l;
+   if(e.f){var o=e.f(t);if(o.length){hit=true;links=o}}else if(e.r.test(t))hit=true;
+   if(hit)return{a:e.a,l:links}}
+  return{a:'I am not sure I have that one. Our team can answer personally on WhatsApp, or try one of the topics below.',l:[wa]};
+ }
+ function ask(q){
+  q=q.trim();if(!q)return;add(q,'me');
+  var ty=document.createElement('div');ty.className='m bot typing';ty.innerHTML='<i></i><i></i><i></i>';log.appendChild(ty);log.scrollTop=log.scrollHeight;
+  var r=answer(q);setTimeout(function(){ty.remove();add(r.a,'bot',r.l)},reduce?0:650);
+ }
+ [['Browse collections','Show me your collections'],['Delivery','How long does delivery take?'],['Returns & exchange','Can I return a saree?'],['Care tips','How do I care for silk and linen?'],['Visit store','Where is your store?'],['Talk to a human','Talk to a human']].forEach(function(c){
+  var b=document.createElement('button');b.type='button';b.textContent=c[0];b.addEventListener('click',function(){ask(c[1])});chips.appendChild(b)});
+ function setChat(o){
+  chat.classList.toggle('open',o);cb.classList.toggle('on',o);cb.setAttribute('aria-expanded',o);document.body.classList.toggle('chat-open',o);
+  tip.classList.remove('show');
+  if(o){opened=true;if(!started){started=true;setTimeout(function(){add('Namaste! I am the LAKIRA assistant. I can help you find a saree and answer questions about delivery, returns and care. For anything else, our team is on WhatsApp.','bot')},200)}setTimeout(function(){inp.focus()},300)}
+ }
+ cb.addEventListener('click',function(){setChat(!chat.classList.contains('open'))});
+ document.getElementById('chatX').addEventListener('click',function(){setChat(false)});
+ tip.addEventListener('click',function(){setChat(true)});
+ addEventListener('keydown',function(e){if(e.key==='Escape'&&chat.classList.contains('open'))setChat(false)});
+ form.addEventListener('submit',function(e){e.preventDefault();var v=inp.value;inp.value='';ask(v)});
+ setTimeout(function(){if(!opened){tip.classList.add('show');setTimeout(function(){tip.classList.remove('show')},7000)}},6000);
+ /* hero scroll: parallax + fade */
+ var hBg=document.querySelector('.hero-bg'),hCopy=document.querySelector('.hero-copy'),hCtrl=document.querySelector('.hero-ctrl'),
+ tiles=[].slice.call(document.querySelectorAll('.tile')),band=document.querySelector('.band');
+ function fx(y){
+  if(!hBg)return;
+  if(!reduce&&y<innerHeight*1.3){
+   var k=Math.min(y/innerHeight,1);
+   hBg.style.transform='translate3d(0,'+(y*.28)+'px,0) scale('+(1+k*.1)+')';
+   hCopy.style.transform='translate3d(0,'+(-y*.14)+'px,0)';
+   hCopy.style.opacity=Math.max(0,1-y/(innerHeight*.62));
+   hCtrl.style.opacity=Math.max(0,1-y/(innerHeight*.4));
+  }
+  if(reduce)return;
+  tiles.forEach(function(t){
+   var r=t.getBoundingClientRect();if(r.bottom<-50||r.top>innerHeight+50)return;
+   var p=((r.top+r.height/2)-innerHeight/2)/innerHeight;
+   t.firstElementChild.style.translate='0 '+(-p*r.height*.16)+'px';
+  });
+  if(band){var r=band.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){band.style.setProperty('--par',(((r.top+r.height/2)-innerHeight/2)/innerHeight)*-140)}}
+ }
+ /* split headlines into words */
+ document.querySelectorAll('.intro h2,.band h2').forEach(function(h){
+  var words=h.textContent.trim().split(/\s+/);h.textContent='';h.classList.add('split');
+  words.forEach(function(w,k){var sp=document.createElement('span');sp.className='w';sp.style.setProperty('--i',k);sp.textContent=w;h.appendChild(sp);if(k<words.length-1)h.appendChild(document.createTextNode(' '))});
+ });
+ /* scroll reveal */
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){
+   if(x.isIntersecting){var t=x.target,k=[].indexOf.call(t.parentNode.children,t);
+    if(!t.classList.contains('split'))t.style.transitionDelay=Math.min(k%4,3)*90+'ms';
+    t.style.setProperty('--d',Math.min(k%4,3)*120+'ms');t.classList.add('in');io.unobserve(t)}
+  })},{rootMargin:'0px 0px -8% 0px',threshold:.04});
+  document.querySelectorAll('.intro>:not(h2),.head,.card,.band p,.band .btn,.faq>h2,.faq>details,.stores>*').forEach(function(e){if(!e.classList.contains('btn'))e.classList.add('rv');io.observe(e)});
+  document.querySelectorAll('.tile,.post').forEach(function(e){e.classList.add('rvt');io.observe(e)});
+  document.querySelectorAll('.split').forEach(function(e){io.observe(e)});
+ }
+ fx(scrollY);addEventListener('resize',function(){fx(scrollY)});
+})();
+</script></body></html>
